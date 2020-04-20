@@ -1,0 +1,129 @@
+<!DOCTYPE html5>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>SSD Experiment 1</title>
+    <script type="text/javascript" src="../js/adig.js"></script>
+    <script type="text/javascript" src="../js/plotly.js"></script>
+    <link rel="stylesheet" href="../css/adi.css">
+  </head>
+  <body onload="bonl()">
+    <h1>Clipping (Limiting) Circuits </h1>
+    <center>
+      <table>
+        <tbody>
+          <tr>
+            <td id="rad">
+              <input id="r1" onchange="rad(1)" type="radio">Clipper circuit with Forward biased diode in series <br>
+              <input id="r2" onchange="rad(2)" type="radio">Clipper circuit with Reverse biased diode in series <br>
+              <input id="r3" onchange="rad(3)" type="radio">Clipper circuit with Forward biased diode in shunt <br>
+              <input id="r4" onchange="rad(4)" type="radio">Clipper circuit with Reverse biased diode in shunt <br>
+              <input id="r5" onchange="rad(5)" type="radio">Clipper Circuit with Limiting at two different levels <br>
+              <input id="r6" onclick="rad(6)" type="button" value="Clear"> <br>
+            </td>
+
+              <td id="im1"> <img id="img1" src="../images/ClpDFSe.png" /></td>
+              <td id="im2"> <img id="img2" src="../images/ClpDRSe.png" /></td>
+              <td id="im3"> <img id="img3" src="../images/ClpDFSh.png" /></td>
+              <td id="im4"> <img id="img4" src="../images/ClpDRSh.png" /></td>
+              <td id="im5"> <img id="img5" src="../images/ClpDt.png" /></td>
+              <td id="ra1">
+                <div><strong>
+                    Instructions1:</strong>
+                  </div>
+                <ol>
+                  <li>Select the Amplitide(A) of the input signal(Vi).</li>
+                  <li>Select the time period(T) of one cylce of the input signal(Vi).</li>
+                  <li>Select the battery voltage(Vr)</li>
+                  <li>Observe the input signal(Vi) and clipped output signal(Vo) in the graph.</li>
+                  <li>Change the values of A, T and Vr to observe the variation in the output signal. </li>
+                  <li>Hover on the graph to observe the value of the Vi and Vo at that instatnt of time T.</li>
+                  <li>Save the graph if you are done with your experiment.</li>
+                  <li>
+                            <strong> Note:
+                                  <ul>
+                                      <li>Ideal diode considered</li>
+                                      <li>Make sure always A>=0.7</li>
+                                      <li>Make sure always Vr<=A </li>
+                                  </ul>
+                            </strong>
+                  </li>
+                </ol>
+              </td>
+
+              <td id="ra2">
+                <div><strong>Instructions:</strong></div>
+                <ol>
+                  <li>Select the Amplitide(A) of the input signal(Vi).</li>
+                  <li>Select the time period(T) of one cylce of the input signal(Vi).</li>
+                  <li>Select the battery voltages Vr1 and Vr2 such that, <strong> Vr2 > Vr1 </strong> </li>
+                  <li>Observe the input signal(Vi) and clipped output signal(Vo) in the graph.</li>
+                  <li>Change the values of A, T, Vr1 and Vr2 to observe the variation in the output signal. </li>
+                  <li>Hover on the graph to observe the value of the Vi and Vo at that instatnt of time T.</li>
+                  <li>Save the graph if you are done with your experiment.</li>
+                  <li>
+                            <strong> Note:
+                                  <ul>
+                                      <li>Ideal diode considered</li>
+                                      <li>Make sure always A>=0.7</li>
+                                      <li>Make sure always Vr1 <= A  and Vr2 > Vr1</li>
+                                  </ul>
+                            </strong>
+                  </li>
+                </ol>
+              </td>
+
+        </tr>
+          <tr id="a1">
+            <td>Aditya1</td>
+            <td colspan="5">Aditya11</td>
+          </tr>
+          <tr id="a2">
+            <td>Aditya2</td>
+            <td colspan="5">Aditya21</td>
+          </tr>
+          <tr id="a3">
+            <td>Aditya3</td>
+            <td colspan="5">Aditya31</td>
+          </tr>
+          <tr id="a4">
+            <td>Aditya4</td>
+            <td colspan="5">Aditya41</td>
+          </tr>
+          <tr id="a5">
+            <td>Aditya5</td>
+            <td colspan="5">Aditya51</td>
+          </tr>
+
+          <tr>
+            <th> Parameters </th>
+            <th colspan="5"> Graph</th>
+          </tr>
+          <tr>
+            <td>
+                <p> <input min="0" step="0.5" max="5" id="A0" value="0" onchange="adi(0)" type="range">A:<span id='A0v'></span>Volts </p>
+                <p> <input min="-5" step="0.5" max="5" id="T0" value="0" onchange="adi(0)" type="range">T: <span id='T0v'></span>secs</p>
+                <p> <input min="-5" step="0.5" max="5" id="Vr0" value="0" onchange="adi(0)" type="range">Vr: <span id='Vr0v'></span>Volts</p>
+            </td>
+            <td colspan="5">
+                <div id="grph" ></div>
+            </td>
+          </tr>
+
+          <tr>
+                <td>
+                <p> <input min="0" step="0.5" max="5" id="Amp1" value="0" onchange="adi(2)" type="range">A:<span id='Amp1v'></span>Volts </p>
+                <p> <input min="-5" step="0.5" max="5" id="T1" value="0" onchange="adi(2)" type="range">T: <span id='T1v'></span>secs</p>
+                <p> <input min="-5" step="0.5" max="5" id="Vr1" value="0" onchange="adi(2)" type="range">Vr1: <span id='Vr1v'></span>Volts</p>
+                <p> <input min="-5" step="0.5" max="5" id="Vr2" value="0" onchange="adi(2)" type="range">Vr2: <span id='Vr2v'></span>Volts</p>
+                </td>
+            <td colspan="5">
+              <div id="grph1" ></div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </center>
+  </body>
+</html>

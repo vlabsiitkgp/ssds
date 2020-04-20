@@ -1,0 +1,50 @@
+body {
+  font: normal .80em arial, sans-serif;
+#  background: #FFF5EE;   # Sea Shell
+  #background: url(../images/bgi4.png) repeat 0 0;
+}
+h1
+{
+  text-align: Center;
+  width:100%;
+}
+.cen
+{
+  align-self: center;
+  align-items: center;
+  text-align: Center;
+  align-content: center;
+
+}
+table,tr,td
+{
+  align-self: left;
+  align-items: left;
+  text-align: left;
+  align-content: left;
+}
+html
+{
+  width: 100%;
+  height: 100%;
+}
+li,ol
+{
+  text-align: left;
+}
+#grph,#grph1
+{
+  min-width: 600px ;
+  min-height:300px;
+}
+.di
+{
+  max-width: 500px ;
+  max-height:250px;
+}
+
+#img1,#img2,#img3,#img4,#img5
+{
+  max-width: 300px ;
+  max-height:150px;
+}
