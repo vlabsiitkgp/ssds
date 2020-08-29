@@ -1,0 +1,29 @@
+{
+  "name": "quiznew",
+  "version": "1.0.0",
+  "description": "Quiz Template New",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "keywords": [
+    "Quiz",
+    "Javascript",
+    "CSS",
+    "Bootstrap4",
+    "HTML"
+  ],
+  "author": "Aditya Kameswara Rao Nandula",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

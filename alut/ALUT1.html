@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ALU Tutorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/adi.css">
+  <script src="./js/adi.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/popper.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+
+  <div id="ma" class="container">
+      <hr>
+      <h1>4-bit Slice ALU</h1>
+      <hr>
+<div id="prq" class="container" data-parent="#ma">
+
+            <div class="row rw" id="preq">
+                    <h5 class="le">Prerequisites</h5> <br>
+                    <ul class="le">
+                      <li>Download the COA simulator form the below link</li>
+                      <strong><a href="http://vlabs.iitkgp.ac.in/coa/" >http://vlabs.iitkgp.ac.in/coa/</a></strong>
+                      <li>Open command prompt terminal (‘cmd’ from Start panel) and run the simulator using</li>
+                      <strong>"java –jar Simulatornew.jar"</strong>
+                      <li>After opening the simulator, press the steps button below</li>
+                    </ul>
+              </div>
+</div>
+
+<div class="container row">
+
+<div class="col-md-6">
+  <div class="ce">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#prq">Prerequisites</button>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="ce">
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#st">   Steps   </button>
+  </div>
+</div>
+</div>
+
+<div id="st" class="collapse" data-parent="#ma">
+
+          <div class="row rw">
+            <div class="col-sm-1">
+              <p class="page-link page-item float-right" href="#steps" data-slide="prev">Prev</p>
+              </div>
+                <div class="col-lg-10">
+                            <center>
+                            <div class="pagination pagination-sm"> </div>
+                                      <li class="btn btn-sm btn-primary " data-target="#steps" data-slide-to="0">
+                                        Step <span class="badge badge-pill badge-light" >1</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="1">
+                                        Step <span class="badge badge-pill badge-light" >2</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="2">
+                                        Step <span class="badge badge-pill badge-light" >3</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="3">
+                                        Step <span class="badge badge-pill badge-light" >4</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="4">
+                                        Step <span class="badge badge-pill badge-light" >5</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="5">
+                                        Step <span class="badge badge-pill badge-light" >6</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="6">
+                                        Step <span class="badge badge-pill badge-light" >7</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="7">
+                                        Step <span class="badge badge-pill badge-light" >8</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="8">
+                                        Step <span class="badge badge-pill badge-light" >9</span>   </li>
+                                      <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="9">
+                                        Step <span class="badge badge-pill badge-light">10</span>   </li>
+                                        <li class="btn btn-sm btn-primary" data-target="#steps" data-slide-to="10">
+                                          Step <span class="badge badge-pill badge-light">11</span>   </li>
+
+                            </center>
+                </div>
+              <div class="col-sm-1">
+                <p class=" page-link page-item float-left" href="#steps" data-slide="next">Next</p>
+                </div>
+            </div>
+            <div class="container">
+              <div id="steps" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                          <div class="carousel-item active"> <strong>Step 1</strong> <br>
+                                  <ul>
+                                        <li class="para"> In simulator on the right side go to Other Components under Palette, select the ALU 1-bit module. </li>
+                                  </ul>
+                                  <img src="./images/S1.jpg" alt="Step 1">
+                          </div>
+                          <div class="carousel-item"> <strong>Step 2</strong> <br>
+                                  <ul>
+                                    <li class="para">From the right side pallete under <strong>Other Components</strong>, place the ALU 1-bit module on the workspace. </li>
+                                  </ul>
+                                  <img src="./images/S2.jpg" alt="Step 2">
+                          </div>
+                          <div class="carousel-item"> <strong>Step 3</strong> <br>
+                                  <ul>
+
+                                    <li class="para"> To see the pin configuration of the <strong>ALU 1-bit module</strong>, use see pin configuration button on the toolbar on top of the simulator. </li>
+                                    <li class="para">  On click, it opens a <strong>Pin Configuration</strong> floating window.</li>
+                                  </ul>
+                                    <img src="./images/S3.jpg" alt="Step 3" >
+                          </div>
+                          <div class="carousel-item"> <strong>Step 4</strong> <br>
+                                  <ul>
+
+                                        <li class="para"> To perform the experiment, we need five bit switches <strong>(A0, B0, C0, S0, S1) </strong>to give input. </li>
+                                        <li class="para">  Add five bit switches from <strong>Input/Output </strong>under Palette</li>
+                                  </ul>
+                                    <img src="./images/S4.jpg" alt="Step 4" >
+                          </div>
+                          <div class="carousel-item"> <strong>Step 5</strong> <br>
+                                    <ul>
+
+                                          <li class="para"> To perform the experiment, we need two bit displays <strong> (F0, Cout)</strong>  to see the output.</li>
+                                          <li class="para">  Add two bit displays <strong>Input/Output </strong>under Palette</li>
+                                    </ul>
+                                    <img src="./images/S5.jpg" alt="Step 5" >
+                          </div>
+                          <div class="carousel-item"> <strong>Step 6</strong> <br>
+                                    <ul>
+
+                                          <li class="para"> Now connect the input to the ALU 1-bit module. Select the <strong>Connection</strong> on Palette, then click on bit switch and <strong>Pin 9</strong>.</li>
+                                          <li class="para"> Use the pin configuration floating window to identify input and output pins of the module. </li>
+                                    </ul>
+                                      <img src="./images/S6.jpg" alt="Step 6">
+                          </div>
+                          <div class="carousel-item"> <strong>Step 7</strong> <br>
+                                    <ul>
+
+                                          <li class="para"> Repeat step 6 to connect all other components.</li>
+                                    </ul>
+                                      <img src="./images/S7.jpg" alt="Step 7">
+                          </div>
+                          <div class="carousel-item"> <strong>Step 8</strong> <br>
+                                    <ul>
+                                      <li class="para"> Place the Label on the workspace as required to label inputs and outputs from <strong>Circuits and Label </strong> under Palette on the right side. </li>
+                                      <li class="para"> Set the label name using Set Labels and Names on the left side panel. Now the circuit for ALU 1-bit is ready for simulation. </li>
+                                    </ul>
+                                      <img src="./images/S8.jpg" alt="Step 8" >
+                          </div>
+                          <div class="carousel-item"><strong>Step 9</strong> <br>
+                                    <ul>
+                                          <li class="para"> Now simulate the circuit use the <strong>Simulate </strong>button (play button) in the toolbar on top. </li>
+                                          <li class="para"> To change the value of the bit switches from <strong> 0 to 1 </strong>or <strong>1 to 0 </strong>, double click on bit switch. </li>
+                                          <li class="para">Now save your circuit using the Save button in the toolbar on top. </li>
+                                    </ul>
+                                    <img src="./images/S9.jpg" alt="Step 9" >
+                          </div>
+                          <div class="carousel-item"> <strong>Step 10</strong> <br>
+                                    <ul>
+                                          <li class="para"> Now repeat the above steps to design the 4-bit slice ALU.</li>
+                                          <li class="para"> Make sure you connect all the select pins to two bit switches only. </li>
+                                    </ul>
+                                    <img src="./images/S10.jpg" alt="Step 10" >
+                          </div>
+                          <div class="carousel-item"> <strong>Step 11</strong> <br>
+                                    <ul>
+                                          <li class="para"> Now simulate the circuit use the <strong>Simulate</strong> button (play button) in the toolbar on top.</li>
+                                          <li class="para"> To change the value of the bit switches from <strong> 0 to 1 </strong>or <strong>1 to 0 </strong>, double click on bit switch.</li>
+                                          <li class="para"> Now save your circuit using the Save button in the toolbar on top. </li>
+                                    </ul>
+                                    <img src="./images/S10.jpg" alt="Step 11" >
+                          </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+</div>
+</body>
+</html>

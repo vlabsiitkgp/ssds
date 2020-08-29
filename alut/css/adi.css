@@ -1,0 +1,38 @@
+body,h1,.ce{
+  text-align: center;
+}
+
+h1,h5{
+  color:blue;
+}
+.le{
+  color:blue;
+  text-align: left;
+}
+
+.rw{
+  padding-top: 20px;
+  padding-bottom: 1px;
+
+}
+.rw1{
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+.carousel-inner,img {
+  width: 100%;
+  height: 100%;
+}
+.para{
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+}
+
+hr{
+  height:5px;
+  border-width:0;
+  color:blue;
+  background-color:blue;
+}

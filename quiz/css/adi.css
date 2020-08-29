@@ -1,0 +1,54 @@
+/*
+This Scrtpt file is developed by
+Aditya Kameswara Rao Nandula
+Senior Research Fellow,
+Virtual Labs IIT Kharagpur.
+Email: akraonandula@gmail.com
+
+*/
+
+body{
+  background: rgb(238, 223, 253);
+width:100%;
+height:100%;
+  color:white;
+}
+.q{
+background: rgb(123, 63, 153);
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:5rem 3rem;
+}
+[#q11,#q12,#q13,#q14,#q21,#q22,#q23,#q24,#q31,#q32,#q33,#q34,#q41,#q42,#q43,#q44]:hover{
+color:black;
+}
+.jumbotron{
+  background: rgb(123, 63, 153);
+    height:75%;
+    padding:1rem 1rem;
+}
+.pic{
+  border-radius: 2%;
+  width:50%;
+  height:50%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.ce{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.he{
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+header,footer{
+  background: rgb(123, 63, 153);
+    border-radius: 10%;
+    border-width: 1px;
+}

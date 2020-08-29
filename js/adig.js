@@ -10,12 +10,12 @@
         * IIT Kharagpur.
 */
 function adi(){
-              var amp= document.getElementById("Amp");
-              var t= document.getElementById("T");
+              var amp= document.getElementById("A1");
+              var t= document.getElementById("T1");
               var vr1= document.getElementById("Vr1");
               var vr2= document.getElementById("Vr2");
-              var ampv= document.getElementById("Ampv");
-              var tv= document.getElementById("Tv");
+              var ampv= document.getElementById("A1v");
+              var tv= document.getElementById("T1v");
               var vr1v= document.getElementById("Vr1v");
               var vr2v= document.getElementById("Vr2v");
               ampv.innerHTML=amp.value;
@@ -38,6 +38,7 @@ function rad(x){
                 var a3 =document.getElementById('a3');
                 var a4 =document.getElementById('a4');
                 var a5 =document.getElementById('a5');
+                var c1 =document.getElementById('c1');
                 var ra1=document.getElementById('ra1');
                 var ra2=document.getElementById('ra2');
                 var im1=document.getElementById('im1');
@@ -168,6 +169,7 @@ function rad(x){
                                     im3.style.display='none';
                                     im4.style.display='none';
                                     im5.style.display='none';
+                                    c1.style.display='none';
 
                                 }
 
@@ -297,7 +299,7 @@ function rngscn(a,x,y) {
 function plt(ar){
   var pi=22/7;
   var ti= rng(0,0.01,ar[1]);
-  var x=rng(0,(361/ti.length),360)
+  var x=rng(0,(721/ti.length),720)
   var y1= rngscn(ar[0],x,1);
   var y2= rngclp2(ar[0],ar[2],ar[3],y1);
   var y3= rngvr(ar[2],y1);
@@ -338,6 +340,6 @@ function plt(ar){
   }
   };
   var data = [tr1, tr2,tr3,tr4];
-  var layout={title: 'Adiya plotly plot',xlable:'Time(secs)',ylable:'Input(V) & Output (V)'};
+  var layout={title: 'Clipper plot',xlable:'Time(secs)',ylable:'Input(V) & Output (V)'};
   Plotly.newPlot(TEST, data,layout);
   };
