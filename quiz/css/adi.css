@@ -21,47 +21,78 @@ background: rgb(123, 63, 153);
   border-width: 3px;
   padding:5rem 3rem;
 }
-[#q11,#q12,#q13,#q14,#q21,#q22,#q23,#q24,#q31,#q32,#q33,#q34,#q41,#q42,#q43,#q44]:hover{
+/*[#q11,#q12,#q13,#q14,#q21,#q22,#q23,#q24,#q31,#q32,#q33,#q34,#q41,#q42,#q43,#q44]:hover{
 color:black;
-}
+}*/
 .jumbotron{
   background: rgb(123, 63, 153);
     height:75%;
     padding:1rem 1rem;
 }
 @media screen and (min-width: 200px) {
-.tex{
-  color:blue;
-  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
-  font-size: 23px;
-  align-self: center;
-  align-items: center;
-  align-content: center;
-}
+        .tex{
+          color:white;
+          font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p1{
+          border-radius: 2%;
+          width:50%;
+          height:45%;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p2{
+            border-radius: 2%;
+            width:35%;
+            height:40%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+        }
 }
 @media screen and (min-width: 400px) {
-.tex{
-  color:blue;
-  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  align-self: center;
-  align-items: center;
-  align-content: center;
-}
+  .tex{
+    color:white;
+    font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p1{
+    border-radius: 2%;
+    width:80%;
+    height:75%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p2{
+      border-radius: 2%;
+      width:50%;
+      height:55%;
+      align-self: center;
+      align-items: center;
+      align-content: center;
+  }
 }
 @media screen and (min-width: 600px) {
 .tex{
-  color:blue;
+  color:white;
   font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
   font-size: 41px;
   align-self: center;
   align-items: center;
   align-content: center;
 }
-}
 .p1{
   border-radius: 2%;
-  width:50%;
+  width:80%;
   height:75%;
   align-self: center;
   align-items: center;
@@ -69,12 +100,14 @@ color:black;
 }
 .p2{
     border-radius: 2%;
-    width:30%;
+    width:60%;
     height:70%;
     align-self: center;
     align-items: center;
     align-content: center;
 }
+}
+
 .ce{
   align-self: center;
   align-items: center;
