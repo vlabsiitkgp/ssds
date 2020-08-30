@@ -33,14 +33,14 @@ $(document).ready(function(){
   $("#q41,#q42,#q43,#q44").change(function(){
       $("#q4").hide("slow");
       //i=i+1;
-      $("#res").show("slow");
+      $("#rst").show("slow");
       $("#ma").text(" You got "+i+" out of 4 ");
   });
   $("#q11,#q22,#q31,#q43").click(function(){
   i=i+1;
   });
   $("#rst").click(function(){
-    $("#res").hide("slow");
+    $("#rst").hide("slow");
     $("#ti").show("slow");
     i=0
   location.reload(true);
