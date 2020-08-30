@@ -9,35 +9,69 @@ body,h1,.ce{
   align-content: center;
 }
 @media screen and (min-width: 200px) {
-.tex{
-  color:blue;
-  font-size: 23px;
-  align-self: center;
-  align-items: center;
-  align-content: center;
-}
+        .tex{
+          color:white;
+          font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p1{
+          border-radius: 2%;
+          width:50%;
+          height:45%;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p2{
+            border-radius: 2%;
+            width:35%;
+            height:40%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+        }
 }
 @media screen and (min-width: 400px) {
-.tex{
-  color:blue;
-  font-size: 32px;
-  align-self: center;
-  align-items: center;
-  align-content: center;
-}
+  .tex{
+    color:white;
+    font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p1{
+    border-radius: 2%;
+    width:80%;
+    height:75%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p2{
+      border-radius: 2%;
+      width:50%;
+      height:55%;
+      align-self: center;
+      align-items: center;
+      align-content: center;
+  }
 }
 @media screen and (min-width: 600px) {
 .tex{
-  color:blue;
+  color:white;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
   font-size: 41px;
   align-self: center;
   align-items: center;
   align-content: center;
 }
-}
 .p1{
   border-radius: 2%;
-  width:50%;
+  width:80%;
   height:75%;
   align-self: center;
   align-items: center;
@@ -45,12 +79,14 @@ body,h1,.ce{
 }
 .p2{
     border-radius: 2%;
-    width:30%;
+    width:60%;
     height:70%;
     align-self: center;
     align-items: center;
     align-content: center;
 }
+}
+
 h1,h5{
   color:blue;
 }
