@@ -29,13 +29,51 @@ color:black;
     height:75%;
     padding:1rem 1rem;
 }
-.pic{
-  border-radius: 2%;
-  width:50%;
-  height:50%;
+@media screen and (min-width: 200px) {
+.tex{
+  color:blue;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 23px;
   align-self: center;
   align-items: center;
   align-content: center;
+}
+}
+@media screen and (min-width: 400px) {
+.tex{
+  color:blue;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+}
+@media screen and (min-width: 600px) {
+.tex{
+  color:blue;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 41px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+}
+.p1{
+  border-radius: 2%;
+  width:50%;
+  height:75%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.p2{
+    border-radius: 2%;
+    width:30%;
+    height:70%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
 }
 .ce{
   align-self: center;
@@ -43,10 +81,7 @@ color:black;
   align-content: center;
   text-align: center;
 }
-.he{
-  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
-  font-size: 32px;
-}
+
 header,footer{
   background: rgb(123, 63, 153);
     border-radius: 10%;
