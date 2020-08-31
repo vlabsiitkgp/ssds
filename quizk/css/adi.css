@@ -1,0 +1,128 @@
+/*
+This Scrtpt file is developed by
+Aditya Kameswara Rao Nandula
+Senior Research Fellow,
+Virtual Labs IIT Kharagpur.
+Email: akraonandula@gmail.com
+
+*/
+
+body{
+  background: rgb(238, 223, 253);
+width:100%;
+height:100%;
+  color:white;
+}
+.q{
+background: rgb(123, 63, 153);
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:1rem;
+}
+.jumbotron{
+  background: rgb(123, 63, 153);
+    height:75%;
+    padding:1rem 1rem;
+}
+@media screen and (min-width: 200px) {
+        .tex{
+          color:white;
+          font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p1{
+          border-radius: 2%;
+          width:50%;
+          height:45%;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p2{
+            border-radius: 2%;
+            width:35%;
+            height:40%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+        }
+}
+@media screen and (min-width: 400px) {
+  .tex{
+    color:white;
+    font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p1{
+    border-radius: 2%;
+    width:80%;
+    height:75%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p2{
+      border-radius: 2%;
+      width:50%;
+      height:55%;
+      align-self: center;
+      align-items: center;
+      align-content: center;
+  }
+}
+@media screen and (min-width: 600px) {
+.tex{
+  color:white;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 41px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.p1{
+  border-radius: 2%;
+  width:80%;
+  height:75%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.p2{
+    border-radius: 2%;
+    width:60%;
+    height:70%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+}
+
+.ce{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.an:hover{
+  background: rgb(173, 181, 189);
+}
+.lf{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+}
+
+header,footer{
+  background: rgb(123, 63, 153);
+    border-radius: 10%;
+    border-width: 1px;
+}
