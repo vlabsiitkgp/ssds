@@ -41,7 +41,7 @@ $(document).ready(function(){
   });
   $("#q41,#q42,#q43,#q44").change(function(){
       $("#q4").hide("slow");
-      $("#Qs").hide("slow");
+      $("#qes").hide("slow");
       $("#rst").show("slow");
       $("#ma").text(" You got "+i+" out of 4 ");
   });
