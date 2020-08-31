@@ -44,7 +44,6 @@ $(document).ready(function(){
       //i=i+1;
       $("#rst").show("slow");
       $("#ma").text(" You got "+i+" out of 4 ");
-      alert(string($(this).val()));
   });
   $("#q11,#q22,#q31,#q43").click(function(){
   i=i+1;
