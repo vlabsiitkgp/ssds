@@ -114,7 +114,15 @@ color:black;
   align-content: center;
   text-align: center;
 }
-
+.an:hover{
+  background: rgb(173, 181, 189);
+}
+.lf{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+}
 header,footer{
   background: rgb(123, 63, 153);
     border-radius: 10%;
