@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Clipper Experiment</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/adi.css">
+  </head>
+  <body>
+    <div class="container ce">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <header>
+              <div class="row ce ">
+                <div class="col-sm-3 "> <img src="./images/vlabs.png" class="p1"
+                    alt="VLabs Logo"> </div>
+                <div class="col-sm-6  tex">
+                  <p><strong> Virtual Labs <br>
+                      IIT Kharagpur</strong></p>
+                </div>
+                <div class="col-sm-3 ">
+                   <img src="./images/iitkgp.png" class="p2" alt="IIT Khargpur Logo"> </div>
+              </div>
+                <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                  <h3>Clipper (Limiting) Circuits</h3>
+                </div>
+              </div>
+              <hr>
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="cont">
+            <div class="row Insta">
+              <div class="col-sm-5">
+                <form class="form" method="post" id="f1">
+                  <h5>Select on option from below list</h5><br>
+                  <p class="se"><input type="radio" name="adi" id="c1">
+                    &nbsp;<label for="adi">Clipper circuit with Forward biased Diode in Series</label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c2">
+                    &nbsp;<label for="adi">Clipper circuit with Forward biased Diode in Shunt</label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c3">
+                    &nbsp;<label for="adi">Clipper circuit with Reverse biased Diode in Series</label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c4">
+                    &nbsp;<label for="adi">Clipper circuit with Reverse biased Diode in Shunt</label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c5">
+                    &nbsp;<label for="adi">Clipper Circuit with limiting at two different levels</label>
+                  </p>
+                </form>
+              </div>
+              <div class="col-sm-7">
+                <div id="I1" class"container Inst">
+                  <ol class="se">
+                    <p class="ce Inst"><strong> Instructions</p> </strong>
+                    <li class="se">Observe the circuit diagram of the Clipper.</li>
+                    <li class="se">Click on the <strong>Power</strong> Button .</li>
+                    <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                    <li class="se">Select the frequency of the signal(f) for the input signal(V<sub>i</sub>).</li>
+                    <li class="se">Select the battery voltage(V<sub>r</sub>)</li>
+                    <li class="se">Observe the input signal(V<sub>i</sub>) and clipped output signal(V<sub>o</sub>) in the graph.</li>
+                    <li class="se">Change the values of A, f and V<sub>r</sub> to observe the variation in the output signal.</li>
+                    <li>Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>0</sub> at that instatnt of time T.</li>
+                    <li>Save the graph if you are done with your experiment.</li>
+                    <li><strong>
+                      Note:
+                      <ul>
+                        <li>Make sure always V<sub>r</sub><=A  </li>
+                      </ul>
+                      </strong>
+                    </li>
+
+                  </ol>
+                </div>
+                <div id="I2" class"col-sm-12 Inst">
+                  <ol class="se">
+                    <p class="ce Inst"><strong> Instructions</p> </strong>
+                    <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                    <li class="se">Select the frequency (f) of the signal for the input signal(V<sub>i</sub>).</li>
+                    <li class="se">Select the battery voltages V<sub>r2</sub> and V<sub>r2</sub> such that, <strong> V<sub>r2</sub> > V<sub>r1</sub></strong>.</li>
+                    <li class="se">Observe the input signal(V<sub>i</sub>) and clipped output signal(V<sub>o</sub>) in the graph.</li>
+                    <li class="se">Change the values of A, f and V<sub>r1</sub> and V<sub>r2</sub> to observe the variation in the output signal.</li>
+                    <li>Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>o</sub> at that instatnt of time T.</li>
+                    <li>Save the graph if you are done with your experiment.</li>
+                    <li><strong>
+                      Note:
+                      <ul>
+                        <li>Make sure always <strong> V<sub>r1</sub> <= A </strong>and <strong> V<sub>r2</sub> > V<sub>r1</sub></strong>. </li>
+                      </ul>
+                      </strong>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row Inst" id="pw">
+              <div class="col-sm-12">
+                <div class="custom-control custom-switch">
+                  <h5><strong>Power</strong></h5>
+                  <input type="checkbox" class="custom-control-input" id="s1">
+                  <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+
+              </div>
+            </div>
+            <div class="row Inst">
+              <div class="col-sm-8" id="ckt">
+                <img src="images/ClpDFSe.png" alt="ClpDFSe" class="pic" id="ClpDFSe">
+                <img src="images/ClpDFSh.png" alt="ClpDFSh" class="pic" id="ClpDFSh">
+                <img src="images/ClpDRSe.png" alt="ClpDRSe" class="pic" id="ClpDRSe">
+                <img src="images/ClpDRSh.png" alt="ClpDRSh" class="pic" id="ClpDRSh">
+                <img src="images/ClpDt.png" alt="ClpDt" class="pic" id="ClpDt">
+              </div>
+              <div class="col-sm-4" id="grp">
+                  <div class="pic" id="grph">
+                    <p>Graph</p>
+
+                  </div>
+                  <div class="pic" id="grph1">
+                    <p>Graph1</p>
+
+                  </div>
+              </div>
+            </div>
+            <div class="row Inst" id="ctl">
+              <div class="col-sm-4 ">
+                <div class="Inst">
+                      <div class="pb-3 themed-grid-col">
+                        <h4> Function Generator Controls</h4>
+                      </div>
+                      <div class="row mb-3">
+                             <div class="col-md-6 themed-grid-col">
+                                  <h6>Amplitude (V)</h6>
+                                  <div class="themed-grid-co">
+                                    .col-md-6
+                                  </div>
+                              </div>
+                              <div class=" col-md-6 themed-grid-col">
+                                  <h6>Frequency (Hz)</h6>
+                                  <div class="themed-grid-co">
+                                        .col-md-6
+                                  </div>
+                              </div>
+                      </div>
+                </div>
+                <div class="Inst" id="v1">
+                      <div class="pb-3 themed-grid-col">
+                        <h4> Voltage Controls</h4>
+                      </div>
+                      <div class="row mb-3">
+                             <div class="col-md-12 themed-grid-col">
+                                  <h6>Voltage V<sub>r</sub> (V)</h6>
+                                  <div class="themed-grid-co">
+                                    .col-md-6
+                                  </div>
+                              </div>
+                      </div>
+                </div>
+                <div class="Inst" id="v2">
+                      <div class="pb-3 themed-grid-col">
+                        <h4> Voltage Controls</h4>
+                      </div>
+                      <div class="row mb-3">
+                             <div class="col-md-6 themed-grid-col">
+                                  <h6>Voltage V<sub>1</sub> (V)</h6>
+                                  <div class="themed-grid-co">
+                                    .col-md-6
+                                  </div>
+                              </div>
+                              <div class="col-md-6 themed-grid-col">
+                                   <h6>Voltage V<sub>2</sub> (V)</h6>
+                                   <div class="themed-grid-co">
+                                     .col-md-6
+                                   </div>
+                               </div>
+                      </div>
+                </div>
+              </div>
+
+              <div class="col-sm-8">
+                <div class="Inst">
+                      <div class="pb-3 themed-grid-col">
+                        <h4> Oscilloscope Controls</h4>
+                      </div>
+                      <div class="row mb-3">
+                             <div class="col-md-12 themed-grid-col Inst">
+                                  <div class="themed-grid-co">
+                                    <div class="row mb-3">
+                                      <div class="col-md-4 themed-grid-col">
+                                           <button type="button" name="button" id="c1"> <strong>Channel 1</strong> </button>
+                                       </div>
+                                       <div class="col-md-4 themed-grid-col">
+                                            <button type="button" name="button" id="c2"><strong>Channel 2</strong> </button>
+                                        </div>
+                                        <div class="col-md-4 themed-grid-col">
+                                                  <button type="button" name="button" id="du"><strong>Duel</strong> </button>
+                                              </div>
+                                    </div>
+                                  </div>
+                              </div>
+                <div class="Inst">
+                      <div class="pb-3 themed-grid-col">
+                        <h4> Oscilloscope Controls</h4>
+                      </div>
+                      <div class="row mb-3">
+                             <div class="col-md-6 themed-grid-col Inst">
+                                  <h6>Channel 1</h6>
+                                  <div class="themed-grid-co">
+                                    <div class="row mb-3">
+                                           <div class="col-md-4 themed-grid-col">
+                                                <h6>YAxis <br>(Volts/Div)</h6>
+                                                <div class="themed-grid-co">
+                                                  .col-md-6
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 themed-grid-col">
+                                                 <h6>XAxis<br>(ms/div)</h6>
+                                                 <div class="themed-grid-co">
+                                                   .col-md-6
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4 themed-grid-col">
+                                                  <h6>Position<br>(div)</h6>
+                                                  <div class="themed-grid-co">
+                                                    .col-md-6
+                                                  </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class=" col-md-6 themed-grid-col Inst">
+                                  <h6>Channel 2</h6>
+                                  <div class="themed-grid-co">
+                                    <div class="row mb-3">
+                                           <div class="col-md-4 themed-grid-col">
+                                                <h6>YAxis <br>(Volts/Div)</h6>
+                                                <div class="themed-grid-co">
+                                                  .col-md-6
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 themed-grid-col">
+                                                 <h6>XAxis<br>(ms/div)</h6>
+                                                 <div class="themed-grid-co">
+                                                   .col-md-6
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-4 themed-grid-col">
+                                                  <h6>Position<br>(div)</h6>
+                                                  <div class="themed-grid-co">
+                                                    .col-md-6
+                                                  </div>
+                                              </div>
+                                    </div>
+                                  </div>
+                              </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+              </div>
+
+            </div>
+      </div>
+
+      <div class="container ce">
+        <div class="row">
+          <div class="col-sm-12"> &nbsp; </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="jumbotron  ce">
+          <footer>
+            <div class="row ce">
+              <div class="col-sm-12">
+                <p><i> Copyright ©2020 Virtual labs IIT Kharagpur</i></p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+
+    </div>
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/adi.js"></script>
+  </body>
+</html>

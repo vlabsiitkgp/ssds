@@ -1,0 +1,165 @@
+/*
+This Scrtpt file is developed by
+Aditya Kameswara Rao Nandula
+Senior Research Fellow,
+Virtual Labs IIT Kharagpur.
+Email: akraonandula@gmail.com
+
+*/
+
+body{
+  /*background: white;*/
+  width:100%;
+  height:100%;
+  color:blue;
+}
+hr{
+  height: 5px;
+  border-width: 0px;
+  color: blue;
+  background-color: blue;
+}
+.form,.Inst,ol{
+  /*background: rgb(131, 143, 153);*/
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:1rem;
+  color:blue;
+  padding-left: 2rem;
+}
+.row1{
+  /*background: rgb(131, 143, 153,0.38);*/
+  border-color: rgb(238, 223, 253);
+  border-style: dotted;
+  border-radius: 5%;
+  border-width: 3px;
+  padding:2rem;
+}
+.Inst{
+/*  background-color: rgb(131, 143, 153);*/
+}
+.jumbotron{
+  background: white;
+    height:50%;
+    padding:1rem 1rem;
+}
+@media screen and (min-width: 200px) {
+        .tex,h3{
+          color:blue;
+          font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p1{
+          border-radius: 2%;
+          width:50%;
+          height:45%;
+          align-self: center;
+          align-items: center;
+          align-content: center;
+        }
+        .p2{
+            border-radius: 2%;
+            width:35%;
+            height:40%;
+            align-self: center;
+            align-items: center;
+            align-content: center;
+        }
+}
+@media screen and (min-width: 400px) {
+  .tex,h3{
+    color:blue;
+    font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p1{
+    border-radius: 2%;
+    width:80%;
+    height:75%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+  .p2{
+      border-radius: 2%;
+      width:50%;
+      height:55%;
+      align-self: center;
+      align-items: center;
+      align-content: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+.tex,h3{
+  color:blue;
+  font-family:"Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 41px;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.p1{
+  border-radius: 2%;
+  width:80%;
+  height:75%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.p2{
+    border-radius: 2%;
+    width:60%;
+    height:70%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+}
+
+.ce{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.se:hover,li:hover,ol:hover{
+  background: rgb(173, 181, 189);
+  padding-left:1rem;
+  text-align: left;
+}
+.se{
+  text-align: left;
+}
+.lf{
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+}
+.gr{
+  background: green;
+}
+
+header,footer{
+    border-radius: 10%;
+    border-width: 1px;
+    background: aliceblue;
+}
+.pic{
+  width: 100%;
+  height: 100%;
+}
+button{
+  background: white;
+  border-radius: 50%;
+  color: blue;
+}
