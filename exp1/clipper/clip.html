@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/adi.css">
+    <link rel="stylesheet" href="./css/adik.css">
   </head>
   <body>
     <div class="container ce">
@@ -13,19 +14,22 @@
           <div class="col-sm-12">
             <header>
               <div class="row ce ">
-                <div class="col-sm-3 "> <img src="./images/vlabs.png" class="p1"
-                    alt="VLabs Logo"> </div>
+                <div class="col-sm-3 "> <img src="./images/vlabs.png" class="pi1"
+                    alt="VLabs Logo">
+                  </div>
                 <div class="col-sm-6  tex">
                   <p><strong> Virtual Labs <br>
                       IIT Kharagpur</strong></p>
                 </div>
                 <div class="col-sm-3 ">
-                   <img src="./images/iitkgp.png" class="p2" alt="IIT Khargpur Logo"> </div>
+                   <img src="./images/iitkgp.png" class="pi2" alt="IIT Khargpur Logo">
+                </div>
               </div>
-                <hr>
+
+              <hr>
               <div class="row">
                 <div class="col-sm-12">
-                  <h3>Clipper (Limiting) Circuits</h3>
+                    <h3>Clipper (Limiting) Circuits</h3>
                 </div>
               </div>
               <hr>
@@ -33,6 +37,7 @@
           </div>
         </div>
       </div>
+    </div>
 
       <div class="container" id="cont">
             <div class="row Insta">
@@ -40,16 +45,16 @@
                 <form class="form" method="post" id="f1">
                   <h5>Select on option from below list</h5><br>
                   <p class="se"><input type="radio" name="adi" id="c1">
-                    &nbsp;<label for="adi">Clipper circuit with Forward biased Diode in Series</label>
+                    &nbsp;<label for="adi">Clipper circuit with forward biased diode in series</label>
                   </p>
                   <p class="se"><input type="radio" name="adi" id="c2">
-                    &nbsp;<label for="adi">Clipper circuit with Forward biased Diode in Shunt</label>
+                    &nbsp;<label for="adi">Clipper circuit with forward biased diode in shunt</label>
                   </p>
                   <p class="se"><input type="radio" name="adi" id="c3">
-                    &nbsp;<label for="adi">Clipper circuit with Reverse biased Diode in Series</label>
+                    &nbsp;<label for="adi">Clipper circuit with reverse biased diode in series</label>
                   </p>
                   <p class="se"><input type="radio" name="adi" id="c4">
-                    &nbsp;<label for="adi">Clipper circuit with Reverse biased Diode in Shunt</label>
+                    &nbsp;<label for="adi">Clipper circuit with reverse biased diode in shunt</label>
                   </p>
                   <p class="se"><input type="radio" name="adi" id="c5">
                     &nbsp;<label for="adi">Clipper Circuit with limiting at two different levels</label>
@@ -103,7 +108,7 @@
             <br>
             <div class="row Inst" id="pw">
               <div class="col-sm-12">
-                <div class="custom-control custom-switch">
+                <div class="custom-control custom-switch ce">
                   <h5><strong>Power</strong></h5>
                   <input type="checkbox" class="custom-control-input" id="s1">
                   <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
@@ -122,151 +127,198 @@
                 <img src="images/ClpDt.png" alt="ClpDt" class="pic" id="ClpDt">
               </div>
               <div class="col-sm-4" id="grp">
-                  <div class="pic" id="grph">
-                    <p>Graph</p>
+                  <div class="pic" id="grph"> <p>Graph</p> </div>
 
-                  </div>
-                  <div class="pic" id="grph1">
-                    <p>Graph1</p>
-
-                  </div>
               </div>
             </div>
-            <div class="row Inst" id="ctl">
-              <div class="col-sm-4 ">
-                <div class="Inst">
-                      <div class="pb-3 themed-grid-col">
-                        <h4> Function Generator Controls</h4>
-                      </div>
-                      <div class="row mb-3">
-                             <div class="col-md-6 themed-grid-col">
-                                  <h6>Amplitude (V)</h6>
-                                  <div class="themed-grid-co">
-                                    .col-md-6
-                                  </div>
-                              </div>
-                              <div class=" col-md-6 themed-grid-col">
-                                  <h6>Frequency (Hz)</h6>
-                                  <div class="themed-grid-co">
-                                        .col-md-6
-                                  </div>
-                              </div>
-                      </div>
+            <div class="row fc" id="ctl">
+              <div class="col-sm-3 ">
+                <div class="fc ce">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h6>Function Generator Controls</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <input class="preset1" type="range" min="0" max="10" data-width="80" data-height="80" data-angleOffset="220"
+                        data-angleRange="280" id="av">
+                        <br>
+                        <h6>V<sub>i</sub> = <span id="vi"></span> V </h6>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <input class="preset1 ce" type="range" min="0" max="10" data-width="80" data-height="80" data-angleOffset="220"
+                      data-angleRange="280" id="fv">
+                      <br>
+                        <h6>f = <span id="f"></span> kHz</h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="Inst" id="v1">
-                      <div class="pb-3 themed-grid-col">
-                        <h4> Voltage Controls</h4>
-                      </div>
-                      <div class="row mb-3">
-                             <div class="col-md-12 themed-grid-col">
-                                  <h6>Voltage V<sub>r</sub> (V)</h6>
-                                  <div class="themed-grid-co">
-                                    .col-md-6
-                                  </div>
-                              </div>
-                      </div>
+                <div class="fc ce" id="v1">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h6>Battery Voltage Control</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                        <input class="preset1 ce" type="range" min="0" max="10" data-width="80" data-height="80" data-angleOffset="220"
+                        data-angleRange="280" id="vrv">
+                        <br>
+                        <h6>V<sub>r</sub> = <span id="vr"></span> V </h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="Inst" id="v2">
-                      <div class="pb-3 themed-grid-col">
-                        <h4> Voltage Controls</h4>
-                      </div>
-                      <div class="row mb-3">
-                             <div class="col-md-6 themed-grid-col">
-                                  <h6>Voltage V<sub>1</sub> (V)</h6>
-                                  <div class="themed-grid-co">
-                                    .col-md-6
-                                  </div>
-                              </div>
-                              <div class="col-md-6 themed-grid-col">
-                                   <h6>Voltage V<sub>2</sub> (V)</h6>
-                                   <div class="themed-grid-co">
-                                     .col-md-6
-                                   </div>
-                               </div>
-                      </div>
+                <div class="fc ce" id="v2">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h6>Battery Voltage Controls</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220"
+                        data-angleRange="280" id="v1v">
+                        <br>
+                        <h6>V<sub>r1</sub> = <span id="va1"></span> V </h6>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220"
+                      data-angleRange="280" id="v2v">
+                      <br>
+                        <h6>V<sub>r2</sub> = <span id="va2"></span> V </h6>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="col-sm-8">
-                <div class="Inst">
-                      <div class="pb-3 themed-grid-col">
-                        <h4> Oscilloscope Controls</h4>
-                      </div>
-                      <div class="row mb-3">
-                             <div class="col-md-12 themed-grid-col Inst">
-                                  <div class="themed-grid-co">
-                                    <div class="row mb-3">
-                                      <div class="col-md-4 themed-grid-col">
-                                           <button type="button" name="button" id="c1"> <strong>Channel 1</strong> </button>
-                                       </div>
-                                       <div class="col-md-4 themed-grid-col">
-                                            <button type="button" name="button" id="c2"><strong>Channel 2</strong> </button>
-                                        </div>
-                                        <div class="col-md-4 themed-grid-col">
-                                                  <button type="button" name="button" id="du"><strong>Duel</strong> </button>
-                                              </div>
-                                    </div>
-                                  </div>
-                              </div>
-                <div class="Inst">
-                      <div class="pb-3 themed-grid-col">
-                        <h4> Oscilloscope Controls</h4>
-                      </div>
-                      <div class="row mb-3">
-                             <div class="col-md-6 themed-grid-col Inst">
-                                  <h6>Channel 1</h6>
-                                  <div class="themed-grid-co">
-                                    <div class="row mb-3">
-                                           <div class="col-md-4 themed-grid-col">
-                                                <h6>YAxis <br>(Volts/Div)</h6>
-                                                <div class="themed-grid-co">
-                                                  .col-md-6
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 themed-grid-col">
-                                                 <h6>XAxis<br>(ms/div)</h6>
-                                                 <div class="themed-grid-co">
-                                                   .col-md-6
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-4 themed-grid-col">
-                                                  <h6>Position<br>(div)</h6>
-                                                  <div class="themed-grid-co">
-                                                    .col-md-6
-                                                  </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                              </div>
-                              <div class=" col-md-6 themed-grid-col Inst">
-                                  <h6>Channel 2</h6>
-                                  <div class="themed-grid-co">
-                                    <div class="row mb-3">
-                                           <div class="col-md-4 themed-grid-col">
-                                                <h6>YAxis <br>(Volts/Div)</h6>
-                                                <div class="themed-grid-co">
-                                                  .col-md-6
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 themed-grid-col">
-                                                 <h6>XAxis<br>(ms/div)</h6>
-                                                 <div class="themed-grid-co">
-                                                   .col-md-6
-                                                 </div>
-                                             </div>
-                                             <div class="col-md-4 themed-grid-col">
-                                                  <h6>Position<br>(div)</h6>
-                                                  <div class="themed-grid-co">
-                                                    .col-md-6
-                                                  </div>
-                                              </div>
-                                    </div>
-                                  </div>
-                              </div>
-                      </div>
+              <div class="col-sm-9 fc ce">
+                <div class="row">
+                  <div class="col-sm-12">
+                      <h6>Oscilloscope Controls</h6>
+                  </div>
                 </div>
+                <div class="row ce">
+                  <div class="col-sm-3">
+
+                  </div>
+                  <div class="col-sm-2 ce">
+                    <button type="button" class="btn btn-primary btn-sm" id="bc1"> <strong>Channel 1</strong></button>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-sm" id="bc2"> <strong>Channel 2</strong></button>
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-sm" id="du"> <strong>Duel</strong></button>
+                  </div>
+                  <div class="col-sm-3">
+
+                  </div>
+                </div>
+                <div class="row fc ce">
+                  <div class="col-12 col-sm-6 ce fc">
+                      <h6>Channel 1</h6>
+                      <div class="row">
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <input class="preset1" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="vc1v">
+                          <br>
+                          <h6>V<sub>c1</sub> = <span id="vc1"></span> V/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-5">
+                          <input class="preset1" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
+                          <br>
+                          <h6>Time = <span id="t1"></span> (ms)/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h6>Position</h6>
+                        </div>
+                      </div>
+                      <div class="row ce">
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px1v">
+                          <br>
+                          <h6>P<sub>X</sub> = <span id="px1"></span> </h6>
+                        </div>
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py1v">
+                            <br>
+                            <h6>P<sub>Y</sub> = <span id="py1"></span></h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sm-6 ce fc">
+                      <h6>Channel 2</h6>
+                      <div class="row">
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <input class="preset1" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="vc2v">
+                          <br>
+                          <h6>V<sub>c2</sub> = <span id="vc2"></span> V/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                        <div class="col-12 col-sm-5">
+                          <input class="preset1" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
+                          <br>
+                          <h6>Time = <span id="t2"></span> (ms)/div </h6>
+                        </div>
+                        <div class="col-12 col-sm-1">
+
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h6>Position</h6>
+                        </div>
+                      </div>
+                      <div class="row ce">
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px2v">
+                          <br>
+                          <h6>P<sub>X</sub> = <span id="px2"></span> </h6>
+                        </div>
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                        <div class="col-12 col-sm-3">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py2v">
+                          <br>
+                          <h6>P<sub>Y</sub> = <span id="py2"></span> </h6>
+                        </div>
+                        <div class="col-12 col-sm-2">
+
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
             <div class="row">
               <div class="col-sm-12">
@@ -280,6 +332,13 @@
           <div class="col-sm-12"> &nbsp; </div>
         </div>
       </div>
+
+
+
+
+
+
+
       <div class="container">
         <div class="jumbotron  ce">
           <footer>
@@ -294,10 +353,27 @@
 
 
     </div>
-    <script src="./js/jquery.slim.min.js"></script>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/adi.js"></script>
+    <script type="text/javascript" src="./js/plotly.js"></script>
+    <script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/plotly.js"></script>
+    <script type="text/javascript" src="./js/adi.js"></script>
+    <script type="text/javascript" src="./js/knob.js"></script>
+    <script type="text/javascript" src="./js/ui.js"></script>
+    <script type="text/javascript" src="./js/ui.el.js"></script>
+    <script type="text/javascript" src="./js/p1.js"></script>
+    <script type="text/javascript" src="./js/adik.js"></script>
+          <svg>
+              <filter id="dropshadow" height="150%" width="150%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                  <feOffset dx="0" dy="3" result="offsetblur"/>
+                  <feMerge>
+                      <feMergeNode/>
+                      <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+              </filter>
+          </svg>
   </body>
 </html>
