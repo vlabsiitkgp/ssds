@@ -14,6 +14,7 @@ Email: akraonandula@gmail.com
   var vr= $("#vrv").val();
   var vr1= $("#v1v").val();
   var vr2= $("#v2v").val();
+
   var vc1= $("#vc1v").val();
   var t1= $("#t1v").val();
   var px1= $("#px1v").val();
@@ -39,7 +40,6 @@ Email: akraonandula@gmail.com
               return ans;
     };
   function rngscn(a,f,x) {
-      var pi=22/7;
       var ans = [];
         for(let i=0;x[i]!=undefined;i++)
           {
@@ -117,17 +117,19 @@ Email: akraonandula@gmail.com
     var t2= $("#t2v").val();
     var px2= $("#px2v").val();
     var py2= $("#py2v").val();
-                var pi=22/7;
-                var ti= rng(0,0.01,4*pi);
-                var vi= rngscn(amp,fre,ti);
-                var vclp1s= rngclp1(amp,vr,vi,1);
-                var vclp1h= rngclp1(amp,vr,vi,2);
-                var vclp2= rngclp2(amp,vr1,vr2,vi);
-                var vrl= rngvr(vr,vi);
-                var vr1l= rngvr(vr1,vi);
-                var vr2l= rngvr(vr2,vi);
+                var amp1=amp/vc1;
+                var amp2=amp/vc2;
+                fre=fre*t1;
+                var ti= rng(0,0.01,2*Math.PI);
+                var vi= rngscn(amp1,fre,ti,py1);
+                var vclp1s= rngclp1(amp2,vr/vc2,vi,1);
+                var vclp1h= rngclp1(amp2,vr/vc2,vi,2);
+                var vclp2= rngclp2(amp2,vr1/vc2,vr2/vc2,vi);
+                var vrl= rngvr(vr/vc2,vi);
+                var vr1l= rngvr(vr1/vc2,vi);
+                var vr2l= rngvr(vr2/vc2,vi);
 
-                TEST = document.getElementById('grph');
+                gr = document.getElementById('grph');
                     var in1 = {
                           x: ti,
                           y: vi,
@@ -218,7 +220,7 @@ Email: akraonandula@gmail.com
                         var layout={title: 'Input (Vi)', xlable:'Time(secs)',ylable:'Input(V)'};
                       }
                     }
-                    Plotly.newPlot(TEST, data,layout);
+                    Plotly.newPlot(gr, data,layout);
   };
 
 $(document).ready(function(){
