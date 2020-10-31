@@ -103,6 +103,15 @@ Email: akraonandula@gmail.com
                 }
         return ans;
     };
+
+    function po(v,x) {
+                var ans = [];
+                for(let i=0;v[i]!=undefined;i++)
+                    {
+                          ans.push(v[i]+Number(x));
+                        }
+                return ans;
+      };
   function plt(cha){
     var amp= $("#av").val();
     var fre= $("#fv").val();
@@ -128,34 +137,44 @@ Email: akraonandula@gmail.com
                 var vrl= rngvr(vr/vc2,vi);
                 var vr1l= rngvr(vr1/vc2,vi);
                 var vr2l= rngvr(vr2/vc2,vi);
+                var ti1= po(ti,px1);
+                var ti2= po(ti,px2);
+                vi= po(vi,py1);
+                vclp1s= po(vclp1s,py2);
+                vclp1h= po(vclp1h,py2);
+                vclp2= po(vclp2,py2);
+                vrl= po(vrl,py1);
+                vr1l= po(vr2l,py1);
+                vr2l= po(vr2l,py1);
+
 
                 gr = document.getElementById('grph');
                     var in1 = {
-                          x: ti,
+                          x: ti1,
                           y: vi,
                           type: 'scatter',
                           name: 'Input(Vi)'
                     };
                     var op1 = {
-                          x: ti,
+                          x: ti2,
                           y: vclp1s,
                           type: 'scatter',
                           name: 'Output(Vo)'
                     };
                     var op2 = {
-                          x: ti,
+                          x: ti2,
                           y: vclp1h,
                           type: 'scatter',
                           name: 'Output(Vo)'
                     };
                     var op3 = {
-                          x: ti,
+                          x: ti2,
                           y: vclp2,
                           type: 'scatter',
                           name: 'Output(Vo)'
                     };
                     var inr = {
-                          x: ti,
+                          x: ti2,
                           y: vrl,
                           type: 'line',
                           name: 'Vr1',
@@ -165,7 +184,7 @@ Email: akraonandula@gmail.com
                           }
                     };
                     var inr1 = {
-                          x: ti,
+                          x: ti2,
                           y: vr1l,
                           type: 'line',
                           name: 'Vr2',
@@ -175,7 +194,7 @@ Email: akraonandula@gmail.com
                           }
                     };
                     var inr2 = {
-                          x: ti,
+                          x: ti2,
                           y: vr2l,
                           type: 'line',
                           name: 'Vr2',
@@ -186,38 +205,142 @@ Email: akraonandula@gmail.com
                     };
                     if(cha=='1'){
                       var data = [in1];
-                      var layout={title: 'Input (Vi)', xlable:'Time(secs)',ylable:'Input(V)'};
+                      var layout={title: 'Input (Vi)',plot_bgcolor: 'black',paper_bgcolor:'black',
+                      font: {
+                        family: 'Courier New, monospace',
+                        size: 18,
+                        color: '#7f7f7f'
+                      },
+                      xaxis: {
+                        title:'Time (s)',
+                        showticklabels: true,
+                        autotick: true},
+                        yaxis: {
+                          title:'Input(V)',
+                          showticklabels: true,
+                          autotick: true}};
                     }
                     else if(cha=='2'){
                       if(clp=='1' || clp=='2'){
-                      var data = [op1];
-                      var layout={title: 'Clipper Output(Vo)', xlable:'Time(secs)',ylable:'Output(V)'};
+                      var data = [op1,inr];
+                      var layout={title: 'Clipper Output(Vo)', plot_bgcolor: 'black',paper_bgcolor:'black',
+                      font: {
+                        family: 'Courier New, monospace',
+                        size: 18,
+                        color: '#7f7f7f'
+                      },
+                      xaxis: {
+                        title:'Time (s)',
+                        showticklabels: true,
+                        autotick: true},
+                        yaxis: {
+                          title:'Output (V)',
+                          showticklabels: true,
+                          autotick: true}};
                       }
                       else if(clp=='3' || clp=='4'){
-                        var data = [op2];
-                        var layout={title: 'Clipper Output(Vo)', xlable:'Time(secs)',ylable:'Output(V)'};
+                        var data = [op2,inr];
+                        var layout={title: 'Clipper Output(Vo)', plot_bgcolor: 'black',paper_bgcolor:'black',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 18,
+                          color: '#7f7f7f'
+                        },
+                        xaxis: {
+                          title:'Time (s)',
+                          showticklabels: true,
+                          autotick: true},
+                          yaxis: {
+                            title:'Output (V)',
+                            showticklabels: true,
+                            autotick: true}};
                       }
                       else if (clp=='5') {
-                        var data = [op3];
-                        var layout={title: 'Clipper Output(Vo)', xlable:'Time(secs)',ylable:'Output(V)'};
+                        var data = [op3,inr1,inr2];
+                        var layout={title: 'Clipper Output(Vo)', plot_bgcolor: 'black',paper_bgcolor:'black',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 18,
+                          color: '#7f7f7f'
+                        },
+                        xaxis: {
+                          title:'Time (s)',
+                          showticklabels: true,
+                          autotick: true},
+                          yaxis: {
+                            title:'Output (V)',
+                            showticklabels: true,
+                            autotick: true}};
                       }
                     }
                     else if(cha=='3'){
                       if(clp=='1' || clp=='2'){
                       var data = [in1,op1,inr];
-                      var layout={title: 'Clipper plot',xlable:'Time(secs)',ylable:'Input(V) & Output (V)'};
+                      var layout={title: 'Clipper plot',plot_bgcolor: 'black',paper_bgcolor:'black',text_color:'blue',
+                      font: {
+                        family: 'Courier New, monospace',
+                        size: 18,
+                        color: '#7f7f7f'
+                      },
+                      xaxis: {
+                        title:'Time (s)',
+                        showticklabels: true,
+                        autotick: true},
+                        yaxis: {
+                          title:'Vi/Vo (V)',
+                          showticklabels: true,
+                          autotick: true}};
                       }
                       else if(clp=='3' || clp=='4'){
                         var data = [in1,op2,inr];
-                        var layout={title: 'Clipper plot',xlable:'Time(secs)',ylable:'Input(V) & Output (V)'};
+                        var layout={title: 'Clipper plot',plot_bgcolor: 'black',paper_bgcolor:'black',text_color:'blue',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 18,
+                          color: '#7f7f7f'
+                        },
+                        xaxis: {
+                          title:'Time (s)',
+                          showticklabels: true,
+                          autotick: true},
+                          yaxis: {
+                            title:'Vi/Vo (V)',
+                            showticklabels: true,
+                            autotick: true}};
                       }
                       else if (clp=='5') {
                         var data = [in1,op3,inr1,inr2];
-                        var layout={title: 'Clipper plot',xlable:'Time(secs)',ylable:'Input(V) & Output (V)'};
+                        var layout={title: 'Clipper plot',plot_bgcolor: 'black',paper_bgcolor:'black',text_color:'blue',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 18,
+                          color: '#7f7f7f'
+                        },
+                        xaxis: {
+                          title:'Time (s)',
+                          showticklabels: true,
+                          autotick: true},
+                          yaxis: {
+                            title:'Vi/Vo (V)',
+                            showticklabels: true,
+                            autotick: true}};
                       }
                       else{
                         var data = [in1];
-                        var layout={title: 'Input (Vi)', xlable:'Time(secs)',ylable:'Input(V)'};
+                        var layout={title: 'Input (Vi)', plot_bgcolor: 'black',paper_bgcolor:'black',
+                        font: {
+                          family: 'Courier New, monospace',
+                          size: 18,
+                          color: '#7f7f7f'
+                        },
+                        xaxis: {
+                          title:'Time (s)',
+                          showticklabels: true,
+                          autotick: true},
+                          yaxis: {
+                            title:'Input(V)',
+                            showticklabels: true,
+                            autotick: true}};
                       }
                     }
                     Plotly.newPlot(gr, data,layout);
