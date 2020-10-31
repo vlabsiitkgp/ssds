@@ -143,9 +143,9 @@ Email: akraonandula@gmail.com
                 vclp1s= po(vclp1s,py2);
                 vclp1h= po(vclp1h,py2);
                 vclp2= po(vclp2,py2);
-                vrl= po(vrl,py1);
-                vr1l= po(vr2l,py1);
-                vr2l= po(vr2l,py1);
+                vrl= po(vrl,py2);
+                vr1l= po(vr2l,py2);
+                vr2l= po(vr2l,py2);
 
 
                 gr = document.getElementById('grph');
