@@ -187,7 +187,7 @@ Email: akraonandula@gmail.com
                           x: ti2,
                           y: vr1l,
                           type: 'line',
-                          name: 'Vr2',
+                          name: 'Vr1',
                           line: {
                             dash: 'dot',
                             width: 1
@@ -326,8 +326,8 @@ Email: akraonandula@gmail.com
                             autotick: true}};
                       }
                       else{
-                        var data = [in1];
-                        var layout={title: 'Input (Vi)', plot_bgcolor: 'black',paper_bgcolor:'black',
+                        var data = [];
+                        var layout={title: 'Clipper Circuit Plot', plot_bgcolor: 'black',paper_bgcolor:'black',
                         font: {
                           family: 'Courier New, monospace',
                           size: 18,
@@ -342,6 +342,23 @@ Email: akraonandula@gmail.com
                             showticklabels: true,
                             autotick: true}};
                       }
+                    }
+                    else{
+                      var data = [];
+                      var layout={title: 'Clipper Circuit Plot', plot_bgcolor: 'black',paper_bgcolor:'black',
+                      font: {
+                        family: 'Courier New, monospace',
+                        size: 18,
+                        color: '#7f7f7f'
+                      },
+                      xaxis: {
+                        title:'Time (s)',
+                        showticklabels: true,
+                        autotick: true},
+                        yaxis: {
+                          title:'Input(V)',
+                          showticklabels: true,
+                          autotick: true}};
                     }
                     Plotly.newPlot(gr, data,layout);
   };
@@ -379,25 +396,21 @@ $(document).ready(function(){
       clp=1;
       $(".pic").slideUp();
       $("#ClpDFSe").slideDown("slow");
-      $("#grph").slideDown("slow");
     });
     $("#c2").click(function(){
       clp=2;
       $(".pic").slideUp();
       $("#ClpDFSh").slideDown("slow");
-      $("#grph").slideDown("slow");
     });
     $("#c3").click(function(){
       clp=3;
       $(".pic").slideUp();
       $("#ClpDRSe").slideDown("slow");
-      $("#grph").first().slideDown("slow");
     });
     $("#c4").click(function(){
       clp=4;
       $(".pic").slideUp();
       $("#ClpDRSh").slideDown("slow");
-      $("#grph").slideDown("slow");
     });
     $("#c5").click(function(){
       clp=5;
@@ -405,7 +418,6 @@ $(document).ready(function(){
       $("#I2").slideDown("slow");
       $(".pic").slideUp();
       $("#ClpDt").slideDown("slow");
-      $("#grph").slideDown("slow");
       $("#v1").slideUp();
       $("#v2").slideDown("slow");
       $("#pw").slideDown("slow");
@@ -416,8 +428,10 @@ $(document).ready(function(){
       $("#sn").css("background","green");
       $("#ckt").removeClass("col-sm-8");
       $("#ckt").addClass("col-sm-4");
+      $("#grp").removeClass("col-sm-4");
       $("#grp").addClass("col-sm-8");
       $("#ctl").slideDown("slow");
+      $("#grph").slideDown("slow");
       ckt=1;
       plt(ch);
     }
@@ -426,8 +440,11 @@ $(document).ready(function(){
       $("#sn").css("background","red");
       $("#grp").removeClass("col-sm-8");
       $("#grp").addClass("col-sm-4");
+      $("#ckt").removeClass("col-sm-4");
       $("#ckt").addClass("col-sm-8");
       $("#ctl").slideUp();
+      $("#grph").slideUp("slow");
+      plt(ch);
       ckt=0;
     }
   });
