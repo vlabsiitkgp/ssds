@@ -8,7 +8,7 @@ Email: akraonandula@gmail.com
 */
   var ckt=0;
   var ch=0;
-  var clp=0;
+  var cla=0;
   var amp= $("#av").val();
   var fre= $("#fv").val();
   var vr= $("#vrv").val();
@@ -105,6 +105,7 @@ Email: akraonandula@gmail.com
                             width: 1
                           }
                     };
+                    
                     if(cha=='1'){
                       var data = [in1];
                       var layout={title: 'Input (Vi)',plot_bgcolor: 'black',paper_bgcolor:'black',
@@ -178,6 +179,7 @@ Email: akraonandula@gmail.com
 
   $(document).ready(function(){
       $("#ctl").slideUp();
+      $(".pic").slideUp();
       $("#vi").text($("#av").val());
       $("#f").text($("#fv").val());
       $("#vc1").text($("#vc1v").val());
@@ -191,33 +193,94 @@ Email: akraonandula@gmail.com
       $("#s1").prop("checked",false);
       $("#sn").text("Circuit OFF");
       $("#sn").css("background","red");
-      $("#grp").slideUp();
-      $("#ctl").slideUp();
       $("#pa").slideUp();
+      $("#pw").slideUp();
+      $("#I1").slideUp();
+      $("#I2").slideUp();
       ckt=0;
       plt(0);
   });
 
-      $("#s1").click(function(){
-        if(ckt==0){
-        $("#sn").text("Circuit ON");
-        $("#sn").css("background","green");
-        $("#ctl").slideDown("slow");
-        $("#grp").slideDown("slow");
-        $("#pa").slideDown("slow");
-        ckt=1;
-        plt(ch);
-      }
-      else{
-        $("#sn").text("Circuit OFF");
-        $("#sn").css("background","red");
-        $("#grp").slideUp();
-        $("#ctl").slideUp();
-        $("#pa").slideUp();
-        ckt=0;
-        plt(0);
-      }
-    });
+  $("#c1,#c4").click(function(){
+    $("#I1").slideDown("slow");
+    $("#I2").slideUp();
+    $("#pw").slideDown("slow");
+    $("#v1").slideUp();
+  });
+  $("#c2,#c3,#c5,#c6").click(function(){
+    $("#I1").slideUp("slow");
+    $("#I2").slideDown("slow");
+    $("#v1").slideDown("slow");
+    $("#pw").slideDown("slow");
+    $("#v1").slideDown();
+  });
+  $("#c1").click(function(){
+    cla=1;
+    $(".pic").slideUp();
+    $("#PCa").slideDown("slow");
+  });
+  $("#c2").click(function(){
+    cla=2;
+    $(".pic").slideUp();
+    $("#PCaWPVr").slideDown("slow");
+  });
+  $("#c3").click(function(){
+    cla=3;
+    $(".pic").slideUp();
+    $("#PCaWNVr").slideDown("slow");
+  });
+  $("#c4").click(function(){
+    cla=4;
+    $(".pic").slideUp();
+    $("#NCa").slideDown("slow");
+  });
+  $("#c5").click(function(){
+    cla=5;
+    $(".pic").slideUp();
+    $("#NCaWPVr").slideDown("slow");
+  });
+  $("#c6").click(function(){
+    cla=6;
+    $(".pic").slideUp();
+    $("#NCaWNVr").slideDown("slow");
+  });
+  $("#s1").click(function(){
+    if(ckt==0){
+    $("#sn").text("Circuit ON");
+    $("#sn").css("background","green");
+    $("#ckt").removeClass("col-sm-8");
+    $("#ckt").addClass("col-sm-4");
+    $("#grp").removeClass("col-sm-4");
+    $("#grp").addClass("col-sm-8");
+    $("#ctl").slideDown("slow");
+    $("#grph").slideDown("slow");
+    ckt=1;
+    plt(ch);
+  }
+  else{
+    $("#sn").text("Circuit OFF");
+    $("#sn").css("background","red");
+    $("#grp").removeClass("col-sm-8");
+    $("#grp").addClass("col-sm-4");
+    $("#ckt").removeClass("col-sm-4");
+    $("#ckt").addClass("col-sm-8");
+    $("#ctl").slideUp();
+    $("#grph").slideUp("slow");
+    ckt=0;
+  }
+});
+  $("#c1,#c2,#c3,#c4,#c5,#c6").click(function(){
+    $("#s1").prop("checked",false);
+    $("#sn").text("Circuit OFF");
+    $("#sn").css("background","red");
+    $("#grp").removeClass("col-sm-8");
+    $("#grp").addClass("col-sm-4");
+    $("#ckt").removeClass("col-sm-4");
+    $("#ckt").addClass("col-sm-8");
+    $("#ctl").slideUp();
+    ckt=0;
+    plt(0);
+  });
       $("#av").change(function(){
         $("#vi").text($("#av").val());
         plt(ch);

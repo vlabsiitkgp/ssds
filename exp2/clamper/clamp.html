@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Clamper Circuit Experiment</title>
+    <title>Fullwave Rectifier Experiment</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/adi.css">
     <link rel="stylesheet" href="./css/adik.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1L9YWERYY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-P1L9YWERYY');
-    </script>
+<!--    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+ <script id="MathJax-script" async
+         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+ </script>-->
   </head>
   <body>
     <div class="container ce">
@@ -50,9 +45,29 @@
 
       <div class="container" id="cont">
             <div class="row Insta ce">
-                <div class="col-sm-6" id="ckt">
-                  <img src="images/Clmp.png" alt="Clamp" class="pic" id="clmp">
-                </div>
+              <div class="col-sm-6">
+                <form class="form" method="post" id="f1">
+                  <h5>Select an option from below list</h5><br>
+                  <p class="se"><input type="radio" name="adi" id="c1">
+                    &nbsp;<label for="adi">Positive Clamper circuit</label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c2">
+                    &nbsp;<label for="adi">Positive Clamper circuit with positive reference V<sub>r</sub></label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c3">
+                    &nbsp;<label for="adi">Positive Clamper circuit with negative reference V<sub>r</sub></label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c4">
+                    &nbsp;<label for="adi">Negative Clamper circuit</label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c5">
+                    &nbsp;<label for="adi">Negative Clamper circuit with positive reference V<sub>r</sub></label>
+                  </p>
+                  <p class="se"><input type="radio" name="adi" id="c6">
+                    &nbsp;<label for="adi">Negative Clamper circuit with negative reference V<sub>r</sub></label>
+                  </p>
+                </form>
+              </div>
               <div class="col-sm-6">
                 <div id="I1" class"container Inst">
                   <ol class="se">
@@ -71,6 +86,32 @@
                       Note:
                       <ul>
                         <li>Ideal diode is considered </li>
+                        <li>Make sure always Input Signal Amplitude>0 V  </li>
+                        <li>Make sure always Input Signal Frequency>0 Hz  </li>
+                        <li>Load resistance \( R=1k \Omega \)</li>
+                        <li>Scroll on the knob to vary the value</li>
+                      </ul>
+                      </strong>
+                    </li>
+                  </ol>
+                </div>
+                <div id="I2" class"container Inst">
+                  <ol class="se">
+                    <p class="ce Inst"><strong> Instructions</p> </strong>
+                    <li class="se">Observe the circuit diagram of the fullwave rectifier </li>
+                    <li class="se">Click on the <strong>Power</strong> Button. </li>
+                    <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                    <li class="se">Select the frequency of the signal(f) for the input signal(V<sub>i</sub>).</li>
+                    <li class="se">Select the "Channel 1" to observe the input signal on graph</li>
+                    <li class="se">Select the "Channel 2" to observe the rectified output signal on graph</li>
+                    <li class="se">Select the "Dual" to observe the input signal and rectified output signal on graph</li>
+                    <li class="se">Change the values of A, f and V<sub>r</sub> to observe the variation in the input and output signals. </li>
+                    <li class="se">Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>o</sub> at that instatnt of time T.</li>
+                    <li class="se">Save the graph if you are done with your experiment.</li>
+                    <li class="se"><strong>
+                      Note:
+                      <ul>
+                        <li>Ideal diode is considered </li>
                         <li>Make sure always Input Signal Amplitude>0 v  </li>
                         <li>Make sure always Input Signal Frequency>0 Hz  </li>
                         <li>Load resistance \( R=1k \Omega \)</li>
@@ -83,7 +124,7 @@
               </div>
             </div>
             <br>
-            <div class="row Inst" id="pw">
+            <div class="row ce Inst" id="pw">
               <div class="col-md-12">
                 <div class="custom-control custom-switch ce">
                   <h5><strong>Power</strong></h5>
@@ -91,13 +132,20 @@
                   <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
                 </div>
               </div>
+            </div>
+            <div class="row ce Inst">
+              <div class="ce col-sm-8" id="ckt">
+                <img src="images/PCa.png" alt="PCa" class="pic" id="PCa" />
+                <img src="images/PCaWPVr.png" alt="PCaWPVr" class="pic" id="PCaWPVr" />
+                <img src="images/PCaWNVr.png" alt="PCaWNVr" class="pic" id="PCaWNVr" />
+                <img src="images/NCa.png" alt="NCa" class="pic" id="NCa" />
+                <img src="images/NCaWPVr.png" alt="NCaWPVr" class="pic" id="NCaWPVr" />
+                <img src="images/NCaWNVr.png" alt="NCaWNVr" class="pic" id="NCaWNVr" />
               </div>
-            <div class="row Inst">
-              <div class="col-md-12" id="grp">
+              <div class="ce col-sm-4" id="grp">
                   <div class="pic" id="grph"> </div>
               </div>
-
-              </div>
+            </div>
 
             <div class="row fc" id="ctl">
               <div class="col-sm-3 ">
@@ -107,7 +155,7 @@
                         <h6>Function Generator Controls</h6>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row fc">
                     <div class="col-12 col-sm-6">
                         <input class="preset1" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
                         data-angleRange="280" id="av">
@@ -126,13 +174,15 @@
                           <h6>Battery Voltage Control</h6>
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="row ce">
+                      <div class="col-sm-3"></div>
                       <div class="col-sm-6">
-                          <input class="preset1 ce" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220"
+                          <input class="preset1" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220"
                           data-angleRange="280" id="vrv">
                           <br>
                           <h6>V<sub>r</sub> = <span id="vr"></span> V </h6>
                       </div>
+                      <div class="col-sm-3"></div>
                     </div>
                   </div>
                 </div>
