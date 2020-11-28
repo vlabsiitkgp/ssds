@@ -74,8 +74,32 @@ Email: akraonandula@gmail.com
                 var ti= rng(0,0.01,2*Math.PI);
                 var vi= rngscn(amp1,fre1,ti);
                 var vo= rngscn(amp2,fre2,ti);
-                vo= po(vo,vr/vc2);
                 var vrl= rngvr(vr/vc2,vi);
+
+                if(cla==1)
+                {
+                    vo= po(vo,amp2);
+                }
+                else if (cla==4) {
+                  vo= po(vo,-amp2);
+                }
+                else if (cla==2) {
+                  vo= po(vo,(Number(amp)+Number(vr))/vc2);
+                  vrl= rngvr(vr/vc2,vi);
+                }
+                else if (cla==3) {
+                  vo= po(vo,(Number(amp)-Number(vr))/vc2);
+                  vrl= rngvr(-vr/vc2,vi);
+                }
+                else if (cla==5) {
+                  vo= po(vo,(-Number(amp)+Number(vr))/vc2);
+                  vrl= rngvr(vr/vc2,vi);
+                }
+                else if (cla==6) {
+                  vo= po(vo,(-Number(amp)-Number(vr))/vc2);
+                  vrl= rngvr(-vr/vc2,vi);
+                }
+
                 var ti1= po(ti,px1);
                 var ti2= po(ti,px2);
                 vi= po(vi,py1);
@@ -105,7 +129,7 @@ Email: akraonandula@gmail.com
                             width: 1
                           }
                     };
-                    
+
                     if(cha=='1'){
                       var data = [in1];
                       var layout={title: 'Input (Vi)',plot_bgcolor: 'black',paper_bgcolor:'black',
