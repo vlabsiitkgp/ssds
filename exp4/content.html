@@ -8,6 +8,7 @@
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1L9YWERYY"></script>
+          <script type="text/javascript" src="./Halfwave/js/tex-chtml-full.js"> </script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -73,7 +74,7 @@
 
                         <div class="content" id="experiment-article-section-1-content">
                             <p style="text-align: justify">
-                              Introduction to Experiment
+                              Almost all electronic circuits require a dc source of power. For portable low power systems batteries may be used. More frequently, however, electronic equipment is energized by a power supply, a piece of equipment which converts the alternating waveform from the power lines into an essentially direct voltage.
 
                             </p>
                         </div>
@@ -88,7 +89,21 @@
 
                         <div class="content" id="experiment-article-section-2-content">
                             <p style="text-align: justify; font-weight: bold">Theory</p>
-                              Theory of Experiment
+                            A device, such as the semiconductor diode, which is
+capable of converting a sinusoidal input waveform (whose average value is zero) into a unidirectional (though not constant) waveform, with a nonzero average component, is called a rectifier. The basic circuit for half-wave rectifier is shown below.
+<br>
+&nbsp;
+<center>
+<img src="./Halfwave/images/HaWa.png" alt="Halfwave">
+</center>
+&nbsp;
+<br>
+The rectifier circuit the input<br>
+\( v_i = V_m sin(wt) \)
+<br>
+has a peak value V m which is very large compared with the cutin
+voltage \(V_T\) of the diode, we assume in the following discussion
+
                             </p>
                         </div>
                     </section>
@@ -104,7 +119,12 @@
                         </div>
 
                         <div class="content" id="experiment-article-section-3-content">
-                            Objective of Experiment
+                          To study the characteristics of halfwave rectifier with and without filter and to calculate the following parameters.
+                          <ol>
+                            <li> Ripple factor</li>
+                          <li> Rectification efficiency </li>
+                          <li> Percentage (%) regulation </li>
+                        </ol>
                         </div>
                     </section>
                     <!-------------------------- Fourth section of the article---------------------------------------->

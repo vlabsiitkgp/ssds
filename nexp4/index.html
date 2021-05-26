@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Halfwave Rectifier Experiment</title>
+    <!---
+    This HTML page and script files are developed by
+    Aditya Kameswara Rao Nandula
+    Senior Research Fellow,
+    Virtual Labs IIT Kharagpur.
+    LinkedIn: https://in.linkedin.com/in/akraonandula/
+      -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/adi.css">
+    <link rel="stylesheet" href="./css/adik.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1L9YWERYY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P1L9YWERYY');
+    </script>
+  </head>
+  <body onload="st()">
+    <div class="container ce">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <header>
+              <div class="row ce ">
+                <div class="col-sm-3 "> <img src="./images/vlabs.jpg" class="pi1"
+                    alt="VLabs Logo">
+                  </div>
+                <div class="col-sm-6  tex">
+                  <p><strong> Virtual Labs <br>
+                      IIT Kharagpur</strong></p>
+                </div>
+                <div class="col-sm-3 ">
+                   <img src="./images/iitkgp.png" class="pi2" alt="IIT Khargpur Logo">
+                </div>
+              </div>
+
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                    <h3>Halfwave Rectifier Experiment</h3>
+                </div>
+              </div>
+              <hr>
+            </header>
+          </div>
+        </div>
+        <div class="container ce">
+          <div class="row bg-secondary text-white p-3 my-3">
+            <div id="qqd" class="col-sm-3"></div>
+            <div class="col-sm-6"></div>
+            <!--<div  id="qqsc" class="col-sm-3"></div>-->
+            <div id="qqt" class="col-sm-3"></div>
+          </div>
+          </div>
+      </div>
+    </div>
+
+<div class="container" id="men">
+  <div class="container">
+    <!-- Nav pills -->
+    <ul class="nav nav-pills nav-justified" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#intro">Introduction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#obj">Objective</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#the">Theory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#preq">Pre-Quiz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#simu">Simulation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#posq">Post-Quiz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#fedbk">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#refe">References</a>
+      </li>
+
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!--- Start of Introduction-->
+      <div id="intro" class="container tab-pane active"><br>
+        <h3>Introduction</h3>
+        <p style="text-align:justify">
+          <b>Rectifiers:</b> <br>
+          Almost all electronic circuits require a dc source of
+          power. For portable low power systems batteries may be used.
+          More frequently, however, electronic equipment is energized by
+          a power supply, a piece of equipment which converts the alter-
+          nating waveform from the power lines into an essentially direct
+          voltage.
+        </p>
+      </div>
+      <!--- End of Introduction-->
+      <!--- Start of Objective-->
+      <div id="obj" class="container tab-pane fade"><br>
+        <h3>Objective</h3>
+        <p style="text-align:justify">
+          To study the characteristics of halfwave rectifier with and without filter and to calculate the following parameters.
+          <ul>
+            <li>Ripple factor</li>
+            <li>Rectification efficiency</li>
+          </ul>
+        </p>
+      </div>
+      <!--- End of Objective-->
+      <!--- Start of Theory-->
+      <div id="the" class="container tab-pane fade"><br>
+        <h3>Theory</h3>
+        <p style="text-align:justify">
+          A device, such as the semiconductor diode, which is
+          capable of converting a sinusoidal input waveform (whose average value is zero) into a unidirectional (though not constant) waveform, with a nonzero average component, is called a rectifier. The basic circuit for half-wave rectification is shown below.<br>&nbsp;
+          <center>
+            <img src="./images/HaWa.png" alt="Halfwave circuit">
+          </center><br>&nbsp;
+          In a rectifier circuit the input is a sinusiodal wave<br>&nbsp;
+          <center>
+          \( v_i = V_m sin(wt) \)
+          </center><br>&nbsp;
+          has a peak value V m which is very large compared with the cutin
+          voltage \( V_T \) of the diode, we assume in the following discussion
+          that \( V_\gamma = 0 \), (The condition \( V_I \neq 0 \) is treated. With the diode idealized to be a resistance \( R_f \) in the <b>ON</b> state and an open circuit in the <b>OFF</b> state, the current \( i \) in the diode or load \( R_L \) is given in<br>&nbsp;
+          <center>
+          \( i = I_m sin(α) \qquad \quad  if \quad 0 ≤ \alpha ≤ \pi \)<br>
+          \( i =0         \qquad \qquad \qquad   if \quad π ≤ \alpha ≤ 2\pi \)
+          </center><br>&nbsp;
+          where \(\alpha = \omega t \) and<br>&nbsp;
+          <center>
+          \( I_m =\frac{V_m}{R_f+R_L} \)
+          </center> <br>&nbsp;
+          Note that the output current is unidirectional. We
+          now calculate this nonzero value of the average current.
+          Sinusoidal voltage \( v_i \) Diode
+          and Load Voltage \(i\)<br>&nbsp;
+          The voltage \( v_i \) is in figure and <br>&nbsp;
+          <center>
+            <img src="./images/viplot.png" alt="Input plot">
+          </center><br>&nbsp;
+            the rectified diode voltage is in figure below<br>&nbsp;
+            <center>
+              <img src="./images/voplot.png" alt="Output plot">
+            </center>.<br>&nbsp;
+            The input \( v_i \) and the rectified output \( v_o \) togeter in figure below <br>&nbsp;
+            <center>
+              <img src="./images/vivoplot.png" alt="Input plot">
+            </center><br>&nbsp;
+
+            For a half wave rectifier, <br>&nbsp;
+            <center>
+              \( V_{rms} = \frac{V_m}{2} \)<br>&nbsp;
+              \( V_{dc} = \frac{V_m}{\pi} \)
+            </center><br>&nbsp;
+               where \(V_{rms} = \) rms value of input, <br>
+               \( V_{dc} = \) Average value of input and <br>
+               \( V_m  = \) peak value of output.
+               <br>&nbsp;
+               <br>&nbsp;
+          <b>Ripple factor</b> <br>&nbsp;
+          <center>
+            \( r = \frac{V_{r,rms}}{V_{dc}} \)
+          </center><br>&nbsp;
+            where \( V_{r,rms} \) is the rms value of the ac component. Since
+            <br>&nbsp;
+            <center>
+              \( {V_{rms}}^2 = {V_{r,rms}}^2+{V_{dc}}^2 \)
+            </center><br>&nbsp;
+            <center><b>
+              \( r =\sqrt{ (\frac{V_{rms}}{V_{dc}})^2-1}=1.21 \)
+              </b>
+            </center><br>&nbsp;
+
+        </p>
+      </div>
+      <!--- End of Theory-->
+      <!--- Start of Pre Quiz-->
+      <div id="preq" class="container tab-pane fade"><br>
+        <h3>Pre-Quiz</h3>
+        <div class="container ">
+          <div class="row ce">
+            <div class="col-sm-3"></div>
+            <div id="peqqn" class="col-sm-6"></div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row" id="qqs">
+            <div class="col-sm-12">
+                <div id="qq" class="carousel slide">
+                <div class="carousel-inner">
+                   <div class="carousel-item preq active">
+                     <p> What a retifier do?
+                     </p>
+                     <form method="post" id="q1">
+                       <p class="anq1" id="oq1c1">
+                       <input name="Aditya" value="q1" id="q1c1" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts AC to AC</label></p>
+                       <p class="anq1" id="oq1c2">
+                       <input name="Aditya" value="q1" id="q1c2" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts AC to DC</label></p>
+                       <p class="anq1" id="oq1c3">
+                       <input name="Aditya" value="q1" id="q1c3" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts DC to AC</label></p>
+                       <p class="anq1" id="oq1c4">
+                       <input name="Aditya" value="q1" id="q1c4" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts DC to DC</label></p>
+                     </form>
+                     </div>
+                   <div class="carousel-item preq">
+                     <p> A half wave rectifier is defined as a type of rectifier that only allows ______________ of an AC voltage waveform to pass, blocking the other ____________.
+                     </p>
+                     <form method="post" id="q2">
+                       <p class="anq2" id="oq2c1">
+                       <input name="Aditya" value="q2" id="q2c1" type="radio"> &nbsp;<label for="Aditya">  one full-cycle, one full-cycle</label></p>
+                       <p class="anq2" id="oq2c2">
+                       <input name="Aditya" value="q2" id="q2c2" type="radio"> &nbsp;<label for="Aditya">one half-cycle, one half-cycle</label></p>
+                       <p class="anq2" id="oq2c3">
+                       <input name="Aditya" value="q2" id="q2c3" type="radio"> &nbsp;<label for="Aditya"> one half-cycle, one full-cycle</label></p>
+                       <p class="anq2" id="oq2c4">
+                       <input name="Aditya" value="q2" id="q2c4" type="radio"> &nbsp;<label for="Aditya"> one full-cycle, one half-cycle</label></p>
+                     </form>
+                   </div>
+
+                   <div class="carousel-item preq">
+                     <p> Half wave rectifier is used in
+                     </p>
+                     <form method="post" id="q3">
+                       <p class="anq3" id="oq3c1">
+                       <input name="Aditya" value="q3" id="q3c1" type="radio"> &nbsp;<label for="Aditya"> Low power simple battery charger circuit</label></p>
+                       <p class="anq3" id="oq3c2">
+                       <input name="Aditya" value="q3" id="q3c2" type="radio"> &nbsp;<label for="Aditya"> Signal demodulation circuits</label></p>
+                       <p class="anq3" id="oq3c3">
+                       <input name="Aditya" value="q3" id="q3c3" type="radio"> &nbsp;<label for="Aditya"> Amplitude Modulation (AM) Radio circuits as a Detector</label></p>
+                       <p class="anq3" id="oq3c4">
+                       <input name="Aditya" value="q3" id="q3c4" type="radio"> &nbsp;<label for="Aditya"> Soldering Iron circuit</label></p>
+                       <p class="anq3" id="oq3c5">
+                       <input name="Aditya" value="q3" id="q3c5" type="radio"> &nbsp;<label for="Aditya"> All the above</label></p>
+                     </form>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="button" id="pb" class="btn btn-success">Prev</button>
+              </div>
+              <div class="col-sm-4">
+              <!--  <button type="button" id="sb" class="btn btn-success">Submit</button>-->
+              </div>
+              <div class="col-sm-4">
+                <button type="button" id="nb" class="btn btn-success">Next</button>
+              </div>
+
+            </div>
+          <div class="row bg-secondary text-white p-3 my-3 ce">
+            <div class="col-sm-12">
+              <div class="progress">
+                <div id="prb" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--- End of Pre Quiz-->
+      <!--- Start of Simulation-->
+      <div id="simu" class="container tab-pane fade"><br>
+        <h3>Simulation</h3>
+        <div class="container" id="cont">
+              <div class="row Insta ce">
+                  <div class="col-sm-6" id="ckt">
+                    <img src="images/HaWa.png" alt="HaWa" class="pic" id="HaWa">
+                  </div>
+                <div class="col-sm-6">
+                  <div id="I1" class"container Inst">
+                    <ol class="se">
+                      <p class="ce Inst"><strong> Instructions</p> </strong>
+                      <li class="se">Observe the circuit diagram of the fullwave rectifier </li>
+                      <li class="se">Click on the <strong>Power</strong> Button. </li>
+                      <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the frequency of the signal(f) for the input signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the "Channel 1" to observe the input signal on graph</li>
+                      <li class="se">Select the "Channel 2" to observe the rectified output signal on graph</li>
+                      <li class="se">Select the "Dual" to observe the input signal and rectified output signal on graph</li>
+                      <li class="se">Change the values of A, f to observe the variation in the input and output signals.</li>
+                      <li>Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>o</sub> at that instatnt of time T.</li>
+                      <li>Save the graph if you are done with your experiment.</li>
+                      <li><strong>
+                        Note:
+                        <ul>
+                          <li>Ideal diode is considered </li>
+                          <li>Make sure always Input Signal Amplitude>0 v  </li>
+                          <li>Make sure always Input Signal Frequency>0 Hz  </li>
+                          <li>Load resistance \( R=1k \Omega \)</li>
+                          <li>To change the values just scroll by hovering on it.</li>
+                        </ul>
+                        </strong>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row Inst" id="pw">
+                <div class="col-md-6">
+                  <div class="custom-control custom-switch ce">
+                    <h5><strong>Power</strong></h5>
+                    <input type="checkbox" class="custom-control-input" id="s1">
+                    <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
+                  </div>
+                </div>
+                <div class="col-md-6 ce" id="pa">
+                  <button id="pab" type="button" class="btn btn-primary" data-toggle="modal" data-target="#parm"> Parameters </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="parm">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                               <div class="modal-header">
+                           <h4 class="modal-title">Parameters</h4>
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         </div>
+
+                             <!-- Modal body -->
+                            <div class="modal-body">
+                              <div class="row">
+                                  <div class="col-md-6" id="Eq">
+                                     <ul class="eq">
+                                       <li class="eq">\(V_{rms}=\frac{V_m}{2}= \) <span id="vrms"></span> v</li>
+                                       <li class="eq">\(V_{dc}=\frac{V_m}{\pi}= \) <span id="vdc"></span> v</li>
+                                       <li class="eq">\(V_{ac}=\sqrt{{V_{rms}}^2-{V_{dc}}^2}= \) <span id="vac"></span> v</li>
+                                     </ul>
+                                  </div>
+                                  <div class=" col-md-6" id="Eq">
+                                     <ul class="eq">
+                                       <li class="eq"><strong> Ripple factor</strong> &nbsp; \(r=\frac{V_{ac}}{V_{dc}}= \) <span id="rf"> </span></li>
+                                       <li class="eq"><strong> Efficiency</strong> &nbsp; \(\eta=\frac{{P_{dc}}}{{P_{ac}}}*100= \) <span id="effe"> </span> %</li>
+                                     </ul>
+                                  </div>
+                              </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                     </div>
+
+                          </div>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+              <div class="row Inst">
+                <div class="col-sm-12" id="grp">
+                    <div class="pic" id="grph"> </div>
+                </div>
+              </div>
+              <div class="row fc" id="ctl">
+                <div class="col-sm-3 ">
+                  <div class="fc ce">
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <h6>Function Generator Controls</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-sm-6">
+                          <input class="preset1" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
+                          data-angleRange="280" id="av">
+                          <br>
+                          <h6>V<sub>i</sub> = <span id="vi"></span> V </h6>
+                      </div>
+                      <div class="col-12 col-sm-6">
+                        <input class="preset1 ce" type="range" min="50" max="60" step="10" data-width="80" data-height="80" data-angleOffset="-45"
+                        data-angleRange="90" id="fv">
+                        <br>
+                          <h6>f = <span id="f"></span> Hz</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-9 fc ce">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h6>Oscilloscope Controls</h6>
+                    </div>
+                  </div>
+                  <div class="row ce">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-2 ce">
+                      <button type="button" class="btn btn-primary btn-sm" id="bc1"> <strong>Channel 1</strong></button>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary btn-sm" id="bc2"> <strong>Channel 2</strong></button>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary btn-sm" id="du"> <strong>Dual</strong></button>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                  </div>
+                  <div class="row fc ce">
+                    <div class="col-12 col-sm-6 ce fc">
+                        <h6>Channel 1</h6>
+                        <div class="row">
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="vc1v">
+                            <br>
+                            <h6>V<sub>c1</sub> = <span id="vc1"></span> V/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-5">
+                            <input class="preset1" type="range" min="0.1" max="1" step="0.1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
+                            <br>
+                            <h6>Time = <span id="t1"></span> (ms)/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <h6>Position</h6>
+                          </div>
+                        </div>
+                        <div class="row ce">
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px1v">
+                            <br>
+                            <h6>P<sub>X</sub> = <span id="px1"></span> </h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                            <div class="col-12 col-sm-3">
+                              <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py1v">
+                              <br>
+                              <h6>P<sub>Y</sub> = <span id="py1"></span></h6>
+                            </div>
+                            <div class="col-12 col-sm-2">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 ce fc">
+                        <h6>Channel 2</h6>
+                        <div class="row">
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="vc2v">
+                            <br>
+                            <h6>V<sub>c2</sub> = <span id="vc2"></span> V/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-5">
+                            <input class="preset1" type="range" min="0.1" max="1" step="0.1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
+                            <br>
+                            <h6>Time = <span id="t2"></span> (ms)/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <h6>Position</h6>
+                          </div>
+                        </div>
+                        <div class="row ce">
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px2v">
+                            <br>
+                            <h6>P<sub>X</sub> = <span id="px2"></span> </h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py2v">
+                            <br>
+                            <h6>P<sub>Y</sub> = <span id="py2"></span> </h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                </div>
+
+              </div>
+        </div>
+
+        <div class="container ce">
+          <div class="row">
+            <div class="col-sm-12"> &nbsp; </div>
+          </div>
+        </div>
+
+      </div>
+      <!--- End of Simulation-->
+      <!--- Start of Post Quiz-->
+      <div id="posq" class="container tab-pane fade"><br>
+        <h3>Post-Quiz</h3>
+        <div class="container ">
+          <div class="row ce">
+            <div class="col-sm-3"></div>
+            <div id="pqqn" class="col-sm-6"></div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row" id="pqqs">
+            <div class="col-sm-12">
+                <div id="pqq" class="carousel slide">
+                <div class="carousel-inner">
+                   <div class="carousel-item poq active">
+                     <p> \( V_{rms} \) for half wave rectifier is
+                     </p>
+                     <form method="post" id="pq1">
+                       <p class="panq1" id="opq1c1">
+                       <input name="Aditya" value="q1" id="pq1c1" type="radio"> &nbsp;<label for="Aditya"> \( V_m \)</label></p>
+                       <p class="panq1" id="opq1c2">
+                       <input name="Aditya" value="q1" id="pq1c2" type="radio"> &nbsp;<label for="Aditya"> \( 2V_m \)</label></p>
+                       <p class="panq1" id="opq1c3">
+                       <input name="Aditya" value="q1" id="pq1c3" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_m}{2} \)</label></p>
+                       <p class="panq1" id="opq1c4">
+                       <input name="Aditya" value="q1" id="pq1c4" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_m}{\sqrt{2}} \)</label></p>
+                     </form>
+                     </div>
+                   <div class="carousel-item poq">
+                     <p> Ripple factor (\( r \)) for half wave rectifier
+                     </p>
+                     <form method="post" id="pq2">
+                       <p class="panq2" id="opq2c1">
+                       <input name="Aditya" value="q2" id="pq2c1" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_{ac}}{\sqrt{2}} \)</label></p>
+                       <p class="panq2" id="opq2c2">
+                       <input name="Aditya" value="q2" id="pq2c2" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_{ac}}{V_{dc}} \)</label></p>
+                       <p class="panq2" id="opq2c3">
+                       <input name="Aditya" value="q2" id="pq2c3" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_{dc}}{2} \) </label></p>
+                       <p class="panq2" id="opq2c4">
+                       <input name="Aditya" value="q2" id="pq2c4" type="radio"> &nbsp;<label for="Aditya"> None of the above</label></p>
+                     </form>
+                   </div>
+
+                   <div class="carousel-item poq">
+                     <p> Efficiency (\( \eta  \)%) of halfwave rectifier
+                     </p>
+                     <form method="post" id="pq3">
+                       <p class="panq3" id="opq3c1">
+                       <input name="Aditya" value="q3" id="pq3c1" type="radio"> &nbsp;<label for="Aditya"> 40.6%</label></p>
+                       <p class="panq3" id="opq3c2">
+                       <input name="Aditya" value="q3" id="pq3c2" type="radio"> &nbsp;<label for="Aditya"> 81.2%</label></p>
+                       <p class="panq3" id="opq3c3">
+                       <input name="Aditya" value="q3" id="pq3c3" type="radio"> &nbsp;<label for="Aditya"> 50%</label></p>
+                       <p class="panq3" id="opq3c4">
+                       <input name="Aditya" value="q3" id="pq3c4" type="radio"> &nbsp;<label for="Aditya"> None of the above</label></p>
+                     </form>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="button" id="ppb" class="btn btn-success">Prev</button>
+              </div>
+              <div class="col-sm-4">
+              <!--  <button type="button" id="sb" class="btn btn-success">Submit</button>-->
+              </div>
+              <div class="col-sm-4">
+                <button type="button" id="pnb" class="btn btn-success">Next</button>
+              </div>
+
+            </div>
+          <div class="row bg-secondary text-white p-3 my-3 ce">
+            <div class="col-sm-12">
+              <div class="progress">
+                <div id="pprb" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--- End of Post Quiz-->
+
+      <div id="fedbk" class="container tab-pane fade"><br>
+        <h3>Feedback</h3>
+        <br>&nbsp;
+          <center>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuDV3NFqMCjf0KNlCWhetT-nOuu7UZIF4tEg_bU19BSZVTIQ/viewform?embedded=true" width="600px" height="500px"></iframe>
+          </center>
+
+        <br>&nbsp;
+      </div>
+
+      <div id="refe" class="container tab-pane fade"><br>
+        <h3>References</h3>
+        <ul><br>
+          <h4>Books</h4><br>
+          <li>M. Halkias. Integrated Electronics. McGraw-Hill electrical
+            and electronic engineering series. Tata McGraw-Hill Publishing Company, 2001.</li><br>
+        <h4> NPTEL Lectures</h4><br>
+        <li></li><br>
+        <li></li><br>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/plotly.js"></script>
+    <script type="text/javascript" src="./js/adi_Quiz.js"></script>
+    <script type="text/javascript" src="./js/adiHaWa.js"></script>
+    <script type="text/javascript" src="./js/knob.js"></script>
+    <script type="text/javascript" src="./js/ui.js"></script>
+    <script type="text/javascript" src="./js/ui.el.js"></script>
+    <script type="text/javascript" src="./js/p1.js"></script>
+    <script type="text/javascript" src="./js/adik.js"></script>
+
+    <script type="text/javascript" src="./js/tex-chtml-full.js"> </script>
+          <svg>
+              <filter id="dropshadow" height="150%" width="150%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                  <feOffset dx="0" dy="3" result="offsetblur"/>
+                  <feMerge>
+                      <feMergeNode/>
+                      <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+              </filter>
+          </svg>
+
+          <div class="container">
+            <div class="jumbotron  ce">
+              <footer>
+                <div class="row ce">
+                  <div class="col-sm-12">
+                    <p><i> Copyright ©2020 Virtual labs IIT Kharagpur</i></p>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </div>
+
+  </body>
+</html>
