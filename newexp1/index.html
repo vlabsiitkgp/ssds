@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Clipper (Limiting) Circuit Experiment</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/adi.css">
+    <link rel="stylesheet" href="./css/adik.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-203333463-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-203333463-1');
+</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1L9YWERYY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P1L9YWERYY');
+    </script>
+  </head>
+  <body onload="st()">
+    <div class="container ce">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <header>
+              <div class="row ce ">
+                <div class="col-sm-3 "> <img src="./images/vlabs.jpg" class="pi1"
+                    alt="VLabs Logo">
+                  </div>
+                <div class="col-sm-6  tex">
+                  <p><strong> Virtual Labs <br>
+                      IIT Kharagpur</strong></p>
+                </div>
+                <div class="col-sm-3 ">
+                   <img src="./images/iitkgp.png" class="pi2" alt="IIT Khargpur Logo">
+                </div>
+              </div>
+
+              <hr>
+              <div class="row">
+                <div class="col-sm-12">
+                    <h3>Clipper (Limiting) Circuits</h3>
+                </div>
+              </div>
+              <hr>
+            </header>
+          </div>
+        </div>
+        <div class="container ce">
+          <div class="row bg-secondary text-white p-3 my-3">
+            <div id="qqd" class="col-sm-3"></div>
+            <div class="col-sm-6"></div>
+            <!--<div  id="qqsc" class="col-sm-3"></div>-->
+            <div id="qqt" class="col-sm-3"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<div class="container" id="menu">
+  <div class="container">
+    <!-- Nav pills -->
+    <ul class="nav nav-pills nav-justified" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="pill" href="#intro">Introduction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#obj">Objective</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#the">Theory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#preq">Pre-Quiz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#simu">Simulation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#posq">Post-Quiz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#fedbk">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#refe">References</a>
+      </li>
+
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="intro" class="container tab-pane active"><br>
+        <h3>Introduction</h3>
+        <p style="text-align:justify">
+          <b>Clipper (Limiting) Circuits:</b> <br>
+          Clipping circuits are used to select for transmission that part of an arbitrary waveform which lies above or below some reference level. Clipping circuits are also refered as voltage (or current) <i>limiters, amplitude selectors </i> or <i>slicers</i>
+        </p>
+      </div>
+      <div id="obj" class="container tab-pane fade"><br>
+        <h3>Objective</h3>
+        <p style="text-align:justify">
+          To study the behaviour of clipping (limiting) circuits for following cases.
+          <ul>
+            <li>Clipper circuit with diode in series</li>
+            <ul>
+              <li><b>Case 1: <i>Clipper circuit with forward biased diode in series </i></b></li>
+              <li><b>Case 2: <i>Clipper circuit with reverse biased diode in series </i></b> </li>
+            </ul>
+            <li>Clipper circuit with diode in shunt</li>
+            <ul>
+              <li><b>Case 3: <i>Clipper circuit with forward biased diode in shunt </i></b></li>
+              <li><b>Case 4: <i>Clipper circuit with reverse biased diode in shunt </i></b> </li>
+            </ul>
+            <li>Clipping at two different levels</li>
+            <ul>
+              <li><b>Case 5: <i>Clipper Circuit with limiting at two different levels </i></b></li>
+            </ul>
+
+          </ul>
+        </p>
+      </div>
+      <div id="the" class="container tab-pane fade"><br>
+        <p style="text-align:justify">
+        <h3>Theory</h3>
+        <p style="text-align:justify">
+          <h4>Clipper circuit with diode in series</h4> <br>&nbsp;
+          The clipper circuit with diode in series has two cases such as diode  connected in forward bias and in reverse bias.<br>&nbsp;
+          <br>&nbsp;
+          <b>Case 1: <i>Clipper circuit with forward biased diode in series </i></b><br>&nbsp;
+          <br>&nbsp;
+          The clipper circuit has a forward biased diode <b>D</b> in series with a reference voltage in shunt as shown in figure below.<br>&nbsp;
+          <center>
+          <img src="./images/ClpDFSe.png" alt="Clipper circuit with forward biased diode in series ">
+          </center><br>&nbsp;
+            If input voltage \( v_i > V_r \) then the diode D is in forward bias means <b>"ON"</b> state. The output voltage \( v_o=v_i \).<br>
+            The transfer curve has one break at \( v_o=v_i=V_{r}\) and has the  following characteristics (assuming \( V_{r}>>V_{\gamma}\) and \( R_f << R \)).<br>&nbsp;
+          <center>
+            <table class="table ce">
+              <thead class="thead-light">
+                <tr>
+                <th scope="col">Input (\(v_i\))</th>
+                <th scope="col">Output (\(v_o\))</th>
+                <th scope="col">Diode state</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\( v_i > V_{r} \)</td>
+                  <td>\( v_o=v_i \)</td>
+                  <td>D ON </td>
+                </tr>
+                <tr>
+                  <td>\( v_i \leq V_{r} \)</td>
+                  <td> \( v_o = V_{r} \)</td>
+                  <td>D OFF </td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
+          The input signal \(v_i\) is shown below<br>&nbsp;
+          <center>
+          <img src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
+          <b>Case 2: <i>Clipper circuit with reverse biased diode in series </i></b> <br>&nbsp;
+          The clipper circuit has a forward biased diode <b>D</b> in series with a reference voltage in shunt as shown in figure below. <br>&nbsp;
+          <center>
+          <img src="./images/ClpDRSe.png" alt="Clipper circuit with reverse biased diode in series ">
+          </center><br>&nbsp;
+          If input voltage \( v_i < V_r \) then the diode D is in forward bias means <b>"ON"</b> state. The output voltage \( v_o=V_i \).<br>
+          The transfer curve has one break at \( v_o=v_i=V_{r}\) and has the following characteristics (assuming \( V_{r}>>V_{\gamma}\) and \( R_f << R \)).<br>&nbsp;
+          <center>
+            <table class="table ce">
+              <thead class="thead-light">
+                <tr>
+                <th scope="col">Input (\(v_i\))</th>
+                <th scope="col">Output (\(v_o\))</th>
+                <th scope="col">Diode state</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\( v_i < V_{r} \)</td>
+                  <td>\( v_o=v_i \)</td>
+                  <td>D ON </td>
+                </tr>
+                <tr>
+                  <td>\( v_i \geq V_{r} \)</td>
+                  <td> \( v_o = V_{r} \)</td>
+                  <td>D OFF </td>
+                </tr>
+              </tbody>
+            </table>
+          </center><br>&nbsp;
+          The input signal together \(v_i\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal together \(v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c2vo.png" alt="Output waveform">
+          </center><br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c2vivo.png" alt="Input/Output waveform">
+          </center><br>&nbsp;
+
+          <h4>Clipper circuit with diode in shunt</h4> <br>&nbsp;
+          The clipper circuit with diode in shunt has two possible cases such as diode  connected in forward bias and in reverse bias. <br>&nbsp;
+          <b>Case 3: <i>Clipper circuit with forward biased diode in shunt</i></b> <br>&nbsp;
+          <center>
+          <img src="./images/ClpDFSh.png" alt="Clipper circuit with forward biased diode in shunt ">
+          </center><br>&nbsp;
+            If input voltage \( v_i < V_r \) then the diode D is in forward bias means <b>"ON"</b> state. The output voltage \( v_o=v_i \).<br>
+            The transfer curve has one break at \( v_o=v_i=V_{r}\) and has the following characteristics (assuming \( V_{r}>>V_{\gamma}\) and \( R_f << R \)).<br>&nbsp;
+          <center>
+            <table class="table ce">
+              <thead class="thead-light">
+                <tr>
+                <th scope="col">Input (\(v_i\))</th>
+                <th scope="col">Output (\(v_o\))</th>
+                <th scope="col">Diode state</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\( v_i < V_{r} \)</td>
+                  <td>\( v_o=v_i \)</td>
+                  <td>D OFF </td>
+                </tr>
+                <tr>
+                  <td>\( v_i \geq V_{r} \)</td>
+                  <td> \( v_o = V_{r} \)</td>
+                  <td>D ON </td>
+                </tr>
+              </tbody>
+            </table>
+          </center><br>&nbsp;
+
+          The input signal together \(v_i\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal together \(v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c3vo.png" alt="Output waveform">
+          </center><br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c3vivo.png" alt="Input/Output waveform">
+          </center><br>&nbsp;
+
+          <b>Case 4: <i>Clipper circuit with reverse biased diode in shunt </i></b> <br>&nbsp;
+          The clipper circuit with reverse biased diode in shunt is in belwo figure.<br>&nbsp;
+          <center>
+          <img src="./images/ClpDRSh.png" alt="Clipper circuit with reverse biased diode in shunt ">
+          </center><br>&nbsp;
+            If input voltage \( v_i > V_r \) then the diode D is in forward bias means <b>"ON"</b> state. The output voltage \( v_o=v_i \).<br>
+            The transfer curve has one break at \( v_o=v_i=V_{r}\) and has the following characteristics (assuming \( V_{r}>>V_{\gamma}\) and \( R_f << R \)).<br>&nbsp;
+          <center>
+            <table class="table ce">
+              <thead class="thead-light">
+                <tr>
+                <th scope="col">Input (\(v_i\))</th>
+                <th scope="col">Output (\(v_o\))</th>
+                <th scope="col">Diode state</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\( v_i > V_{r} \)</td>
+                  <td>\( v_o=v_i \)</td>
+                  <td>D OFF </td>
+                </tr>
+                <tr>
+                  <td>\( v_i \leq V_{r} \)</td>
+                  <td> \( v_o = V_{r} \)</td>
+                  <td>D ON </td>
+                </tr>
+              </tbody>
+            </table>
+          </center><br>&nbsp;
+          The input signal together \(v_i\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal together \(v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c4vo.png" alt="Output waveform">
+          </center><br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown <br>&nbsp;
+          <center>
+          <img src="./images/c4vivo.png" alt="Input/Output waveform">
+          </center><br>&nbsp;
+
+          <h4>Clipping at two different levels</h4> <br>&nbsp;
+          <b>Case 5: <i>Clipper Circuit with limiting at two different levels </i></b> <br>&nbsp;
+          Diodes may be used in pairs to perform double-ended limiting at independent levels. A <i>parallel, series</i> or a <i>series-parallel</i> arrangement can be used. A parallel arrangement is shown in circuit below.</p><br>&nbsp;
+          <center>
+          <img src="./images/ClpDt.png" alt="Clipper Circuit with limiting at two different levels">
+          </center><br>&nbsp;
+          The transfer curve has two break points, one at \( v_o=v_i=V_{r1}\) and a second one at \( v_o=v_i=V_{r2}\), and has the following characteristics (assuming \( V_{r2}>V_{r1}>>V_{\gamma}\) and \( R_f << R \)).<br>&nbsp;
+          <center>
+            <table class="table ce">
+              <thead class="thead-light">
+                <tr>
+                <th scope="col">Input (\(v_i\))</th>
+                <th scope="col">Output (\(v_o\))</th>
+                <th scope="col" colspan="2">Diode states</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>\( v_i \leq V_{r1} \)</td>
+                  <td>\( v_o=V_{r1} \)</td>
+                  <td>D1 ON </td>
+                  <td>D2 OFF</td>
+                </tr>
+                <tr>
+                  <td>\( V_{r1}< v_i < V_{r2} \)</td>
+                  <td> \( v_o=v_i \)</td>
+                  <td>D1 OFF </td>
+                  <td>D2 OFF</td>
+                </tr>
+                <tr>
+                  <td>\( v_i \geq V_{r2} \)</td>
+                  <td>\( v_o=V_{r2} \)</td>
+                  <td>D1 OFF </td>
+                  <td>D2 ON</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </center><br>&nbsp;
+          The input signal together \(v_i\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal together \(v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c5vo.png" alt="Output waveform">
+          </center><br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown<br>&nbsp;
+          <center>
+          <img src="./images/c5vivo.png" alt="Input/Output waveform">
+          </center><br>&nbsp;
+        </p>
+
+
+
+      </div>
+
+      <div id="preq" class="container tab-pane fade"><br>
+        <h3>Pre-Quiz</h3>
+        <div class="container ">
+          <div class="row ce">
+            <div class="col-sm-3"></div>
+            <div id="peqqn" class="col-sm-6"></div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row" id="qqs">
+            <div class="col-sm-12">
+                <div id="qq" class="carousel slide">
+                <div class="carousel-inner">
+                   <div class="carousel-item preq active">
+                     <p> Clipping circuits are also refered as voltage (or current) ______________.
+                     </p>
+                     <form method="post" id="q1">
+                       <p class="anq1" id="oq1c1">
+                       <input name="Aditya" value="q1" id="q1c1" type="radio"> &nbsp;<label for="Aditya"> <label> Limiters </label></p>
+                       <p class="anq1" id="oq1c2">
+                       <input name="Aditya" value="q1" id="q1c2" type="radio"> &nbsp;<label for="Aditya"> Amplitude selectors</label></p>
+                       <p class="anq1" id="oq1c3">
+                       <input name="Aditya" value="q1" id="q1c3" type="radio"> &nbsp;<label for="Aditya"> Slicers </label></p>
+                       <p class="anq1" id="oq1c4">
+                       <input name="Aditya" value="q1" id="q1c4" type="radio"> &nbsp;<label for="Aditya"> All the above </label></p>
+                     </form>
+                     </div>
+                   <div class="carousel-item preq">
+                     <p> In clipper circuit, the diode can be used in  ______________ baised and in _____________.
+                     </p>
+                     <form method="post" id="q2">
+                       <p class="anq2" id="oq2c1">
+                       <input name="Aditya" value="q2" id="q2c1" type="radio"> &nbsp;<label for="Aditya">  Reverse or Forward biased, Series or Shunt </label></p>
+                       <p class="anq2" id="oq2c2">
+                       <input name="Aditya" value="q2" id="q2c2" type="radio"> &nbsp;<label for="Aditya">Reverse baised,  Shunt </label></p>
+                       <p class="anq2" id="oq2c3">
+                       <input name="Aditya" value="q2" id="q2c3" type="radio"> &nbsp;<label for="Aditya"> Reverse baised, Series </label></p>
+                       <p class="anq2" id="oq2c4">
+                       <input name="Aditya" value="q2" id="q2c4" type="radio"> &nbsp;<label for="Aditya">Forward baised, Shunt </label></p>
+                     </form>
+                   </div>
+
+                   <div class="carousel-item preq">
+                     <p> The clipper circuits can clip at two different levels.
+                     </p>
+                     <form method="post" id="q3">
+                       <p class="anq3" id="oq3c1">
+                       <input name="Aditya" value="q3" id="q3c1" type="radio"> &nbsp;<label for="Aditya"> True </label></p>
+                       <p class="anq3" id="oq3c2">
+                       <input name="Aditya" value="q3" id="q3c2" type="radio"> &nbsp;<label for="Aditya"> False </label></p>
+                     </form>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="button" id="pb" class="btn btn-success">Prev</button>
+              </div>
+              <div class="col-sm-4">
+              <!--  <button type="button" id="sb" class="btn btn-success">Submit</button>-->
+              </div>
+              <div class="col-sm-4">
+                <button type="button" id="nb" class="btn btn-success">Next</button>
+              </div>
+
+            </div>
+          <div class="row bg-secondary text-white p-3 my-3 ce">
+            <div class="col-sm-12">
+              <div class="progress">
+                <div id="prb" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div id="simu" class="container tab-pane fade"><br>
+        <h3>Simulation</h3>
+        <div class="container" id="cont">
+              <div class="row Insta">
+                <div class="col-sm-5">
+                  <form class="form" method="post" id="f1">
+                    <h5>Select an option from below list</h5><br>
+                    <p class="se"><input type="radio" name="adi" id="c1">
+                      &nbsp;<label for="adi">Clipper circuit with forward biased diode in series</label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c3">
+                      &nbsp;<label for="adi">Clipper circuit with reverse biased diode in series</label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c4">
+                      &nbsp;<label for="adi">Clipper circuit with forward biased diode in shunt</label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c2">
+                      &nbsp;<label for="adi">Clipper circuit with reverse biased diode in shunt</label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c5">
+                      &nbsp;<label for="adi">Clipper Circuit with limiting at two different levels</label>
+                    </p>
+                  </form>
+                </div>
+                <div class="col-sm-7">
+                  <div id="I1" class"container Inst">
+                    <ol class="se">
+                      <p class="ce Inst"><strong> Instructions</p> </strong>
+                      <li class="se">Observe the circuit diagram of the Clipper.</li>
+                      <li class="se">Click on the <strong>Power</strong> Button .</li>
+                      <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the frequency of the signal(f) for the input signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the battery voltage(V<sub>r</sub>)</li>
+                      <li class="se">Observe the input signal(V<sub>i</sub>) and clipped output signal(V<sub>o</sub>) in the graph.</li>
+                      <li class="se">Change the values of A, f and V<sub>r</sub> to observe the variation in the output signal.</li>
+                      <li>Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>0</sub> at that instatnt of time T.</li>
+                      <li>Save the graph if you are done with your experiment.</li>
+                      <li><strong>
+                        Note:
+                        <ul>
+                          <li>Make sure always V<sub>r</sub><=A  </li>
+                        </ul>
+                        </strong>
+                      </li>
+
+                    </ol>
+                  </div>
+                  <div id="I2" class"col-sm-12 Inst">
+                    <ol class="se">
+                      <p class="ce Inst"><strong> Instructions</p> </strong>
+                      <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the frequency (f) of the signal for the input signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the battery voltages V<sub>r2</sub> and V<sub>r2</sub> such that, <strong> V<sub>r2</sub> > V<sub>r1</sub></strong>.</li>
+                      <li class="se">Observe the input signal(V<sub>i</sub>) and clipped output signal(V<sub>o</sub>) in the graph.</li>
+                      <li class="se">Change the values of A, f and V<sub>r1</sub> and V<sub>r2</sub> to observe the variation in the output signal.</li>
+                      <li>Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>o</sub> at that instatnt of time T.</li>
+                      <li>Save the graph if you are done with your experiment.</li>
+                      <li><strong>
+                        Note:
+                        <ul>
+                          <li>Make sure always <strong> V<sub>r1</sub> <= A </strong>and <strong> V<sub>r2</sub> > V<sub>r1</sub></strong>. </li>
+                          <li>To change the values just scroll by hovering on it.</li>
+                        </ul>
+                        </strong>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row Inst" id="pw">
+                <div class="col-sm-12">
+                  <div class="custom-control custom-switch ce">
+                    <h5><strong>Power</strong></h5>
+                    <input type="checkbox" class="custom-control-input" id="s1">
+                    <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+              </div>
+              <div class="row Inst">
+                <div class="col-sm-8" id="ckt">
+                  <img src="images/ClpDFSe.png" alt="ClpDFSe" class="pic" id="ClpDFSe">
+                  <img src="images/ClpDFSh.png" alt="ClpDFSh" class="pic" id="ClpDFSh">
+                  <img src="images/ClpDRSe.png" alt="ClpDRSe" class="pic" id="ClpDRSe">
+                  <img src="images/ClpDRSh.png" alt="ClpDRSh" class="pic" id="ClpDRSh">
+                  <img src="images/ClpDt.png" alt="ClpDt" class="pic" id="ClpDt">
+                </div>
+                <div class="col-sm-4" id="grp">
+                    <div class="pic" id="grph"> </div>
+
+                </div>
+              </div>
+              <div class="row fc" id="ctl">
+                <div class="col-sm-3 ">
+                  <div class="fc ce">
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <h6>Function Generator Controls</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-sm-6">
+                          <input class="preset1" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
+                          data-angleRange="280" id="av">
+                          <br>
+                          <h6>V<sub>i</sub> = <span id="vi"></span> V </h6>
+                      </div>
+                      <div class="col-12 col-sm-6">
+                        <input class="preset1 ce" type="range" min="0" max="10" data-width="80" data-height="80" data-angleOffset="220"
+                        data-angleRange="280" id="fv">
+                        <br>
+                          <h6>f = <span id="f"></span> kHz</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fc ce" id="v1">
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <h6>Battery Voltage Control</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <input class="preset1 ce" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
+                          data-angleRange="280" id="vrv">
+                          <br>
+                          <h6>V<sub>r</sub> = <span id="vr"></span> V </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fc ce" id="v2">
+                    <div class="row">
+                      <div class="col-sm-12">
+                          <h6>Battery Voltage Controls</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-sm-6">
+                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220"
+                          data-angleRange="280" id="v1v">
+                          <br>
+                          <h6>V<sub>r1</sub> = <span id="va1"></span> V </h6>
+                      </div>
+                      <div class="col-12 col-sm-6">
+                        <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220"
+                        data-angleRange="280" id="v2v">
+                        <br>
+                          <h6>V<sub>r2</sub> = <span id="va2"></span> V </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-9 fc ce">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h6>Oscilloscope Controls</h6>
+                    </div>
+                  </div>
+                  <div class="row ce">
+                    <div class="col-sm-3">
+
+                    </div>
+                    <div class="col-sm-2 ce">
+                      <button type="button" class="btn btn-primary btn-sm" id="bc1"> <strong>Channel 1</strong></button>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary btn-sm" id="bc2"> <strong>Channel 2</strong></button>
+                    </div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn btn-primary btn-sm" id="du"> <strong>Duel</strong></button>
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+                  </div>
+                  <div class="row fc ce">
+                    <div class="col-12 col-sm-6 ce fc">
+                        <h6>Channel 1</h6>
+                        <div class="row">
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="vc1v">
+                            <br>
+                            <h6>V<sub>c1</sub> = <span id="vc1"></span> V/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-5">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
+                            <br>
+                            <h6>Time = <span id="t1"></span> (ms)/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <h6>Position</h6>
+                          </div>
+                        </div>
+                        <div class="row ce">
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px1v">
+                            <br>
+                            <h6>P<sub>X</sub> = <span id="px1"></span> </h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                            <div class="col-12 col-sm-3">
+                              <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py1v">
+                              <br>
+                              <h6>P<sub>Y</sub> = <span id="py1"></span></h6>
+                            </div>
+                            <div class="col-12 col-sm-2">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 ce fc">
+                        <h6>Channel 2</h6>
+                        <div class="row">
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="vc2v">
+                            <br>
+                            <h6>V<sub>c2</sub> = <span id="vc2"></span> V/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                          <div class="col-12 col-sm-5">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
+                            <br>
+                            <h6>Time = <span id="t2"></span> (ms)/div </h6>
+                          </div>
+                          <div class="col-12 col-sm-1">
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <h6>Position</h6>
+                          </div>
+                        </div>
+                        <div class="row ce">
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px2v">
+                            <br>
+                            <h6>P<sub>X</sub> = <span id="px2"></span> </h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                          <div class="col-12 col-sm-3">
+                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py2v">
+                            <br>
+                            <h6>P<sub>Y</sub> = <span id="py2"></span> </h6>
+                          </div>
+                          <div class="col-12 col-sm-2">
+
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-12">
+                </div>
+
+              </div>
+        </div>
+
+      </div>
+      <div id="posq" class="container tab-pane fade"><br>
+        <h3>Post-Quiz</h3>
+        <div class="container ">
+          <div class="row ce">
+            <div class="col-sm-3"></div>
+            <div id="pqqn" class="col-sm-6"></div>
+            <div class="col-sm-3"></div>
+          </div>
+          <div class="row" id="pqqs">
+            <div class="col-sm-12">
+                <div id="pqq" class="carousel slide">
+                <div class="carousel-inner">
+                   <div class="carousel-item poq active">
+                     <p> Identify teh below clipping circuit.
+                       <center>
+                       <img src="./images/ClpDFSe.png" alt="Clipper circuit with forward biased diode in series ">
+                       </center><br>&nbsp;
+                     </p>
+                     <form method="post" id="pq1">
+                       <p class="panq1" id="opq1c1">
+                       <input name="Aditya" value="q1" id="pq1c1" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with forward biased diode in series</label></p>
+                       <p class="panq1" id="opq1c2">
+                       <input name="Aditya" value="q1" id="pq1c2" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with reverse biased diode in Shunt</label></p>
+                       <p class="panq1" id="opq1c3">
+                       <input name="Aditya" value="q1" id="pq1c3" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with reverse biased diode in series</label></p>
+                       <p class="panq1" id="opq1c4">
+                       <input name="Aditya" value="q1" id="pq1c4" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with forward biased diode in Shunt</label></p>
+                     </form>
+                     </div>
+                   <div class="carousel-item poq">
+                     <p> Clipper circuit with forward biased diode in shunt shown below, if \(v_i < V_r \) the the state of Diode <b>D</b> is_______.
+                       <center>
+                       <img src="./images/ClpDFSh.png" alt="Clipper circuit with forward biased diode in shunt ">
+                       </center><br>&nbsp;
+                     </p>
+                     </p>
+                     <form method="post" id="pq2">
+                       <p class="panq2" id="opq2c1">
+                       <input name="Aditya" value="q2" id="pq2c1" type="radio"> &nbsp;<label for="Aditya"> ON</label></p>
+                       <p class="panq2" id="opq2c2">
+                       <input name="Aditya" value="q2" id="pq2c2" type="radio"> &nbsp;<label for="Aditya"> OFF </label></p>
+                       <p class="panq2" id="opq2c3">
+                       <input name="Aditya" value="q2" id="pq2c3" type="radio"> &nbsp;<label for="Aditya"> Toggle between ON and OFF </label></p>
+                       <p class="panq2" id="opq2c4">
+                       <input name="Aditya" value="q2" id="pq2c4" type="radio"> &nbsp;<label for="Aditya"> None of the above</label></p>
+                     </form>
+                   </div>
+
+                   <div class="carousel-item poq">
+                     <p> Identify the input (\(v_i\)) and output (\(v_o\)) curve for given circuit below.
+                       <center>
+                       <img src="./images/ClpDt.png" alt="Clipper circuit with two diodes ">
+                       </center><br>&nbsp;
+                     </p>
+                     </p>
+                     <form method="post" id="pq3">
+                       <p class="panq3" id="opq3c1">
+                       <input name="Aditya" value="q3" id="pq3c1" type="radio"> &nbsp;<label for="Aditya"> <img class="pqop" src="./images/c1vivo.png" alt="c1vivo "></label></p>
+                       <p class="panq3" id="opq3c2">
+                       <input name="Aditya" value="q3" id="pq3c2" type="radio"> &nbsp;<label for="Aditya"><img class="pqop" src="./images/c2vivo.png" alt="c2vivo "></label></p>
+                       <p class="panq3" id="opq3c3">
+                       <input name="Aditya" value="q3" id="pq3c3" type="radio"> &nbsp;<label for="Aditya"> <img class="pqop" src="./images/c3vivo.png" alt="c3vivo "></label></p>
+                       <p class="panq3" id="opq3c4">
+                       <input name="Aditya" value="q3" id="pq3c4" type="radio"> &nbsp;<label for="Aditya"> <img class="pqop" src="./images/c5vivo.png" alt="c5vivo "></label></p>
+                     </form>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="button" id="ppb" class="btn btn-success">Prev</button>
+              </div>
+              <div class="col-sm-4">
+              <!--  <button type="button" id="sb" class="btn btn-success">Submit</button>-->
+              </div>
+              <div class="col-sm-4">
+                <button type="button" id="pnb" class="btn btn-success">Next</button>
+              </div>
+
+            </div>
+          <div class="row bg-secondary text-white p-3 my-3 ce">
+            <div class="col-sm-12">
+              <div class="progress">
+                <div id="pprb" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+      <div id="refe" class="container tab-pane fade"><br>
+        <h3>References</h3>
+        <ul><br>
+          <h4>Books</h4><br>
+          <li>M. Halkias. Integrated Electronics. McGraw-Hill electrical
+            and electronic engineering series. Tata McGraw-Hill Publishing Company, 2001.</li><br>
+        <h4> NPTEL Lectures</h4><br>
+        <li></li><br>
+        <li></li><br>
+        </ul>
+      </div>
+
+      <div id="fedbk" class="container tab-pane fade"><br>
+        <h3>Feedback</h3>
+        <br>&nbsp;
+          <center>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuDV3NFqMCjf0KNlCWhetT-nOuu7UZIF4tEg_bU19BSZVTIQ/viewform?embedded=true" width="600px" height="500px"></iframe>
+          </center>
+
+        <br>&nbsp;
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/plotly.js"></script>
+    <script type="text/javascript" src="./js/clip.js"></script>
+    <script type="text/javascript" src="./js/knob.js"></script>
+    <script type="text/javascript" src="./js/ui.js"></script>
+    <script type="text/javascript" src="./js/ui.el.js"></script>
+    <script type="text/javascript" src="./js/p1.js"></script>
+    <script type="text/javascript" src="./js/adik.js"></script>
+    <script type="text/javascript" src="./js/tex-chtml-full.js"> </script>
+    <script type="text/javascript" src="./js/adi_clpQuiz.js"></script>
+          <svg>
+              <filter id="dropshadow" height="150%" width="150%">
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+                  <feOffset dx="0" dy="3" result="offsetblur"/>
+                  <feMerge>
+                      <feMergeNode/>
+                      <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+              </filter>
+          </svg>
+
+          <div class="container">
+            <div class="jumbotron  ce">
+              <footer>
+                <div class="row ce">
+                  <div class="col-sm-12">
+                    <p><i> Copyright ©2020 Virtual labs IIT Kharagpur</i></p>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </div>
+
+  </body>
+</html>

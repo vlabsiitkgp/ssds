@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Fullwave Rectifier Experiment</title>
-    <!---
-    This HTML page and script files are developed by
-    Aditya Kameswara Rao Nandula
-    Senior Research Fellow,
-    Virtual Labs IIT Kharagpur.
-    LinkedIn: https://in.linkedin.com/in/akraonandula/
-      -->
+    <title>Clamper Circuit Experiment</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/adi.css">
@@ -54,7 +47,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-12">
-                    <h3>Fullwave Rectifier Experiment</h3>
+                    <h3>Clamper Circuit Experiment</h3>
                 </div>
               </div>
               <hr>
@@ -68,14 +61,18 @@
             <!--<div  id="qqsc" class="col-sm-3"></div>-->
             <div id="qqt" class="col-sm-3"></div>
           </div>
-          </div>
+        </div>
       </div>
+
     </div>
 
-<div class="container" id="men">
+<div class="container" id="menu">
   <div class="container">
     <!-- Nav pills -->
-    <ul class="nav nav-pills nav-justified" role="tablist">
+    <ul class="nav nav-pills nav-justified sticky-top bg-light navbar-dark" role="tablist">
+      <a class="navbar-brand" href="http://vlabs.iitkgp.ac.in/vlt/">
+        <img src="./images/iitkgp.png" alt="logo" style="width:40px;">
+      </a>
       <li class="nav-item">
         <a class="nav-link active" data-toggle="pill" href="#intro">Introduction</a>
       </li>
@@ -100,94 +97,159 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="pill" href="#refe">References</a>
       </li>
-
     </ul>
+
     <!-- Tab panes -->
     <div class="tab-content">
-      <!--- Start of Introduction-->
       <div id="intro" class="container tab-pane active"><br>
         <h3>Introduction</h3>
         <p style="text-align:justify">
-          <b>Rectifiers:</b> <br>
-          Almost all electronic circuits require a dc source of
-          power. For portable low power systems batteries may be used.
-          More frequently, however, electronic equipment is energized by
-          a power supply, a piece of equipment which converts the alter-
-          nating waveform from the power lines into an essentially direct
-          voltage. <br>&nbsp;
-          A device, such as the semiconductor diode, which is
-          capable of converting a sinusoidal input waveform (whose average value is zero) into a unidirectional (though not constant) waveform, with a nonzero average component, is called a rectifier.
+          <b>Clamper Circuit:</b> <br>
+          A Clamper circuit can be defined as a circuit that shifts the waveform to a desired reference DC level without changing the actual appearance of the input signal. As the DC level gets shifted, a clamper circuit is also called as a <i>Level Shifter</i>. <br>
+          A Clamper Circuit adds a input AC signal with a DC level. Using the clamping circuits, the peaks (\(+_{ve}\) and \(-_{ve}\)) of the signals can be placed at desired levels.<br>
+          Clamper circuits consist of energy storage elements like capacitors. A simple clamper circuit comprises of a capacitor, a diode, a resistor and a dc battery if required.
         </p>
       </div>
-      <!--- End of Introduction-->
-      <!--- Start of Objective-->
       <div id="obj" class="container tab-pane fade"><br>
         <h3>Objective</h3>
         <p style="text-align:justify">
-          To study the characteristics of fullwave rectifier with and without filter and to calculate the following parameters.
+          To study the behaviour of Clamper circuits for following cases.
           <ul>
-            <li>Ripple factor</li>
-            <li>Rectification efficiency</li>
+            <li><b>Case 1: <i>Positive clamper </i></b></li>
+            <li><b>Case 2: <i>Positive clamper with positive reference (\( V_r\)) level  </i></b> </li>
+            <li><b>Case 3: <i>Positive clamper with negative reference (\( V_r\)) level</i></b></li>
+            <li><b>Case 4: <i>Negative clamper </i></b></li>
+            <li><b>Case 5: <i>Negative clamper with positive reference (\( V_r\)) level  </i></b> </li>
+            <li><b>Case 6: <i>Negative clamper with negative reference (\( V_r\)) level</i></b></li>
           </ul>
         </p>
       </div>
-      <!--- End of Objective-->
-      <!--- Start of Theory-->
       <div id="the" class="container tab-pane fade"><br>
-        <h3>Theory</h3>
         <p style="text-align:justify">
-          The basic circuit for half-wave rectification is shown below.<br>&nbsp;
+        <h3>Theory</h3>
+          <b>Case 1: <i>Positive clamper </i></b><br>&nbsp;
+          When a negative peak of the signal is clamped above to the zero, then the signal is said to be <i>positively clamped</i> and the circuits is called <i>positive clamper circuit</i>.<br>&nbsp;
+          A positive calmper circuit consists of a reverse biased diode (D) in shunt, a capacitor (C) in series, and a resistor (R) in shunt as in figure below.<br>&nbsp;
           <center>
-            <img src="./images/FuWa.png" alt="Fullwave circuit">
+          <img class="img-fluid" src="./images/PCa.png" alt="Positive clamper">
           </center><br>&nbsp;
-          In a rectifier circuit the input is a sinusiodal wave<br>&nbsp;
+          Initially the capacitor is not charged in positive half cycle and the diode is in <b>OFF</b> state. As the capacitor charges to \(-V_m\) in negative half cycle the diode is in <b>ON</b> state.<br>
+          In the consicuitve positive half cycle, the capacitor is now charged to \(+V_m\) and the diode is in <b>OFF</b> state and gets open circuited. The output of the circuit at this moment will be<br>&nbsp;
           <center>
-          \( v_i = V_m sin(wt) \)
+          \( V_o=V_i+V_m \)
           </center><br>&nbsp;
-          has a peak value \( V_m \) which is very large compared with the cutin
-          voltage \( V_T \) of the diode, we assume that \( V_\gamma = 0 \), (The condition \( V_I \neq 0 \) is treated. With the diode idealized to be a resistance \( R_f \) in the <b>ON</b> state and an open circuit in the <b>OFF</b> state. <br>&nbsp;
-          In the rectifier circuit for <b><i>positive</i></b> half cycle of input signal <b><i>D1</i></b> is <b><i>ON </i></b>  and <b><i>D2</i></b> is <b><i>OFF</i></b>. For <b><i>negative</i></b> half cycle of input signal <b><i>D1</i></b> is <b><i>OFF </i></b> and <b><i>D2</i></b> is <b><i>ON</i></b>.
-          The output voltage \( v_o \) is given as
+          Hence the signal is positively clamped as shown in below figure. The \(V_o\) changes according to the changes in the \(V_i\), but shifts the level according to the charge on the capacitor, as it adds the input \(V_i\).<br>&nbsp;
+
+          The input signal \(v_i\) is shown below<br>&nbsp;
           <center>
-          \( v_o = v_i \qquad   if \quad 0 ≤ \alpha ≤ \pi \)<br>
-          \( v_o =-v_i \qquad   if \quad π ≤ \alpha ≤ 2\pi \)
+          <img class="img-fluid" src="./images/vi.png" alt="Input waveform">
           </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
+
+          <b>Case 2: <i>Positive clamper with positive reference (\( V_r\)) level  </i></b><br>&nbsp;
+          A positive calmper with positive reference (\( V_r\)) level circuit consists of a reverse biased diode (D) in shunt, a capacitor (C) in series, reference voltage (\(V_r\)) and a resistor (R) in shunt as in figure below.<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/PCaWPVr.png" alt="Positive clamper with positive reference voltage Vr">
+          </center><br>&nbsp;
+
           <br>&nbsp;
-
-          Note that the output voltage is unidirectional. <br>&nbsp;
-          The voltage \( v_i \) is in figure and <br>&nbsp;
+          The input signal \(v_i\) is shown below<br>&nbsp;
           <center>
-            <img src="./images/viplot.png" alt="Input plot">
+          <img class="img-fluid" src="./images/vi.png" alt="Input waveform">
           </center><br>&nbsp;
-            the rectified output voltage is in figure below<br>&nbsp;
-            <center>
-              <img src="./images/voplot.png" alt="Output plot">
-            </center>.<br>&nbsp;
-            The input \( v_i \) and the rectified output \( v_o \) together in figure below <br>&nbsp;
-            <center>
-              <img src="./images/vivoplot.png" alt="Input plot">
-            </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
 
-            For a full wave rectifier, <br>&nbsp;
-            <center>
-              \( V_{rms} = \frac{V_m}{\sqrt{2}} \)<br>&nbsp;<br>&nbsp;
-              \( V_{dc} = \frac{2V_m}{\pi} \)
-            </center><br>&nbsp;
-               where \(V_{rms} = \) rms value of input, <br>
-               \( V_{dc} = \) Average value of input and <br>
-               \( V_m  = \) peak value of output.
-               <br>&nbsp;
-               <br>&nbsp;
-          <b>Ripple factor</b> <br>&nbsp;
-            <center><b>
-              \( r =\sqrt{ (\frac{V_{rms}}{V_{dc}})^2-1}=0.48 \)
-              </b>
-            </center><br>&nbsp;
+          <b>Case 3: <i>Positive clamper with negative reference (\( V_r\)) level</i></b><br>&nbsp;
+          A positive calmper with positive reference (\( V_r\)) level circuit consists of a reverse biased diode (D) in shunt, a capacitor (C) in series, reference voltage (\(V_r\)) and a resistor (R) in shunt as in figure below.<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/PCaWNVr.png" alt="Positive clamper with negative reference (\( V_r\)) level">
+          </center><br>&nbsp;
+
+          The input signal \(v_i\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
+
+          <b>Case 4: <i>Negative clamper </i></b><br>&nbsp;
+          When a positive peak of the signal is clamped below to the zero, then the signal is said to be <i>negatively clamped</i> and the circuits is called <i>negative clamper circuit</i>.<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/NCa.png" alt="Negative clamper">
+          </center><br>&nbsp;
+          The input signal \(v_i\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
+
+          <b>Case 5: <i>Negative clamper with positive reference (\( V_r\)) level  </i></b><br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/NCaWPVr.png" alt="Negative clamper with positive reference (\( V_r\)) level">
+          </center><br>&nbsp;
+          The input signal \(v_i\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
+
+          <b>Case 6: <i>Negative clamper with negative reference (\( V_r\)) level</i></b><br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/NCaWNVr.png" alt="Negative clamper with negative reference (\( V_r\)) level">
+          </center><br>&nbsp;
+          The input signal \(v_i\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/vi.png" alt="Input waveform">
+          </center><br>&nbsp;
+          The output signal \(v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vo.png" alt="Output waveform">
+          </center> <br>&nbsp;
+          The input-output signal together \(v_i / v_o\) is shown below<br>&nbsp;
+          <center>
+          <img class="img-fluid" src="./images/c1vivo.png" alt="Input/Output waveform">
+          </center> <br>&nbsp;
 
         </p>
+
+
+
       </div>
-      <!--- End of Theory-->
-      <!--- Start of Pre Quiz-->
+
       <div id="preq" class="container tab-pane fade"><br>
         <h3>Pre-Quiz</h3>
         <div class="container ">
@@ -201,48 +263,42 @@
                 <div id="qq" class="carousel slide">
                 <div class="carousel-inner">
                    <div class="carousel-item preq active">
-                     <p> What a retifier do?
+                     <p> Clipping circuits are also refered as voltage (or current) ______________.
                      </p>
                      <form method="post" id="q1">
                        <p class="anq1" id="oq1c1">
-                       <input name="Aditya" value="q1" id="q1c1" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts AC to AC </label></p>
+                       <input name="Aditya" value="q1" id="q1c1" type="radio"> &nbsp;<label for="Aditya"> <label> Limiters </label></p>
                        <p class="anq1" id="oq1c2">
-                       <input name="Aditya" value="q1" id="q1c2" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts AC to DC</label></p>
+                       <input name="Aditya" value="q1" id="q1c2" type="radio"> &nbsp;<label for="Aditya"> Amplitude selectors</label></p>
                        <p class="anq1" id="oq1c3">
-                       <input name="Aditya" value="q1" id="q1c3" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts DC to AC</label></p>
+                       <input name="Aditya" value="q1" id="q1c3" type="radio"> &nbsp;<label for="Aditya"> Slicers </label></p>
                        <p class="anq1" id="oq1c4">
-                       <input name="Aditya" value="q1" id="q1c4" type="radio"> &nbsp;<label for="Aditya"> Rectifier converts DC to DC</label></p>
+                       <input name="Aditya" value="q1" id="q1c4" type="radio"> &nbsp;<label for="Aditya"> All the above </label></p>
                      </form>
                      </div>
                    <div class="carousel-item preq">
-                     <p> In full wave rectifier circuit, during the positive half cycle of input voltage the diode <b><i>D1</i></b> is ______________ and <b><i>D1</i></b> is _______________.
+                     <p> In clipper circuit, the diode can be used in  ______________ baised and in _____________.
                      </p>
                      <form method="post" id="q2">
                        <p class="anq2" id="oq2c1">
-                       <input name="Aditya" value="q2" id="q2c1" type="radio"> &nbsp;<label for="Aditya">  Reverse baised, Forward biased </label></p>
+                       <input name="Aditya" value="q2" id="q2c1" type="radio"> &nbsp;<label for="Aditya">  Reverse or Forward biased, Series or Shunt </label></p>
                        <p class="anq2" id="oq2c2">
-                       <input name="Aditya" value="q2" id="q2c2" type="radio"> &nbsp;<label for="Aditya">Forward biased, Reverse baised </label></p>
+                       <input name="Aditya" value="q2" id="q2c2" type="radio"> &nbsp;<label for="Aditya">Reverse baised,  Shunt </label></p>
                        <p class="anq2" id="oq2c3">
-                       <input name="Aditya" value="q2" id="q2c3" type="radio"> &nbsp;<label for="Aditya"> Reverse baised, Reverse baised </label></p>
+                       <input name="Aditya" value="q2" id="q2c3" type="radio"> &nbsp;<label for="Aditya"> Reverse baised, Series </label></p>
                        <p class="anq2" id="oq2c4">
-                       <input name="Aditya" value="q2" id="q2c4" type="radio"> &nbsp;<label for="Aditya">Forward baised, Forword biased </label></p>
+                       <input name="Aditya" value="q2" id="q2c4" type="radio"> &nbsp;<label for="Aditya">Forward baised, Shunt </label></p>
                      </form>
                    </div>
 
                    <div class="carousel-item preq">
-                     <p> Full wave rectifier is used in
+                     <p> The clipper circuits can clip at two different levels.
                      </p>
                      <form method="post" id="q3">
                        <p class="anq3" id="oq3c1">
-                       <input name="Aditya" value="q3" id="q3c1" type="radio"> &nbsp;<label for="Aditya"> Uninterruptible Power Supply (UPS) circuits </label></p>
+                       <input name="Aditya" value="q3" id="q3c1" type="radio"> &nbsp;<label for="Aditya"> True </label></p>
                        <p class="anq3" id="oq3c2">
-                       <input name="Aditya" value="q3" id="q3c2" type="radio"> &nbsp;<label for="Aditya"> LCD and LED TVs </label></p>
-                       <p class="anq3" id="oq3c3">
-                       <input name="Aditya" value="q3" id="q3c3" type="radio"> &nbsp;<label for="Aditya"> Car Alternator to charge the batteries</label></p>
-                       <p class="anq3" id="oq3c4">
-                       <input name="Aditya" value="q3" id="q3c4" type="radio"> &nbsp;<label for="Aditya"> Home inverters </label></p>
-                       <p class="anq3" id="oq3c5">
-                       <input name="Aditya" value="q3" id="q3c5" type="radio"> &nbsp;<label for="Aditya"> All the above </label></p>
+                       <input name="Aditya" value="q3" id="q3c2" type="radio"> &nbsp;<label for="Aditya"> False </label></p>
                      </form>
                    </div>
                  </div>
@@ -270,16 +326,35 @@
           </div>
         </div>
 
+
       </div>
-      <!--- End of Pre Quiz-->
-      <!--- Start of Simulation-->
       <div id="simu" class="container tab-pane fade"><br>
         <h3>Simulation</h3>
         <div class="container" id="cont">
               <div class="row Insta ce">
-                  <div class="col-sm-6" id="ckt">
-                    <img src="images/FuWa.png" alt="FuWa" class="pic" id="FuWa">
-                  </div>
+                <div class="col-sm-6">
+                  <form class="form" method="post" id="f1">
+                    <h5>Select an option from below list</h5><br>
+                    <p class="se"><input type="radio" name="adi" id="c1">
+                      &nbsp;<label for="adi">Positive Clamper circuit</label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c2">
+                      &nbsp;<label for="adi">Positive Clamper circuit with positive reference V<sub>r</sub></label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c3">
+                      &nbsp;<label for="adi">Positive Clamper circuit with negative reference V<sub>r</sub></label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c4">
+                      &nbsp;<label for="adi">Negative Clamper circuit</label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c5">
+                      &nbsp;<label for="adi">Negative Clamper circuit with positive reference V<sub>r</sub></label>
+                    </p>
+                    <p class="se"><input type="radio" name="adi" id="c6">
+                      &nbsp;<label for="adi">Negative Clamper circuit with negative reference V<sub>r</sub></label>
+                    </p>
+                  </form>
+                </div>
                 <div class="col-sm-6">
                   <div id="I1" class"container Inst">
                     <ol class="se">
@@ -297,12 +372,37 @@
                       <li class="se"><strong>
                         Note:
                         <ul>
-                          <li>V<sub>2</sub> is 180<sup>o</sup> in phase to V<sub>1</sub></li>
+                          <li>Ideal diode is considered </li>
+                          <li>Make sure always Input Signal Amplitude>0 V  </li>
+                          <li>Make sure always Input Signal Frequency>0 Hz  </li>
+                          <li>Load resistance \( R=1k \Omega \)</li>
+                          <li>Scroll on the knob to vary the value</li>
+                        </ul>
+                        </strong>
+                      </li>
+                    </ol>
+                  </div>
+                  <div id="I2" class"container Inst">
+                    <ol class="se">
+                      <p class="ce Inst"><strong> Instructions</p> </strong>
+                      <li class="se">Observe the circuit diagram of the fullwave rectifier </li>
+                      <li class="se">Click on the <strong>Power</strong> Button. </li>
+                      <li class="se">Select the Amplitide(A) of the input sine wave signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the frequency of the signal(f) for the input signal(V<sub>i</sub>).</li>
+                      <li class="se">Select the "Channel 1" to observe the input signal on graph</li>
+                      <li class="se">Select the "Channel 2" to observe the rectified output signal on graph</li>
+                      <li class="se">Select the "Dual" to observe the input signal and rectified output signal on graph</li>
+                      <li class="se">Change the values of A, f and V<sub>r</sub> to observe the variation in the input and output signals. </li>
+                      <li class="se">Hover on the graph to observe the value of the V<sub>i</sub> and V<sub>o</sub> at that instatnt of time T.</li>
+                      <li class="se">Save the graph if you are done with your experiment.</li>
+                      <li class="se"><strong>
+                        Note:
+                        <ul>
                           <li>Ideal diode is considered </li>
                           <li>Make sure always Input Signal Amplitude>0 v  </li>
                           <li>Make sure always Input Signal Frequency>0 Hz  </li>
                           <li>Load resistance \( R=1k \Omega \)</li>
-                          <li>To change the values just scroll by hovering on it.</li>
+                          <li>Scroll on the knob to vary the value</li>
                         </ul>
                         </strong>
                       </li>
@@ -311,64 +411,29 @@
                 </div>
               </div>
               <br>
-              <div class="row Inst" id="pw">
-                <div class="col-md-6">
+              <div class="row ce Inst" id="pw">
+                <div class="col-md-12">
                   <div class="custom-control custom-switch ce">
                     <h5><strong>Power</strong></h5>
                     <input type="checkbox" class="custom-control-input" id="s1">
                     <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
                   </div>
                 </div>
-                <div class="col-md-6 ce" id="pa">
-                  <button id="pab" type="button" class="btn btn-primary" data-toggle="modal" data-target="#parm"> Parameters </button>
-
-                    <!-- The Modal -->
-                    <div class="modal fade" id="parm">
-                      <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                               <div class="modal-header">
-                           <h4 class="modal-title">Parameters</h4>
-                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         </div>
-
-                             <!-- Modal body -->
-                            <div class="modal-body">
-                              <div class="row">
-                                  <div class="col-md-6" id="Eq">
-                                     <ul class="eq">
-                                       <li class="eq">\(V_{rms}=\frac{V_m}{\sqrt{2}}= \) <span id="vrms"></span> v</li>
-                                       <li class="eq">\(V_{dc}=\frac{2V_m}{\pi}= \) <span id="vdc"></span> v</li>
-                                       <li class="eq">\(V_{ac}=\sqrt{{V_{rms}}^2-{V_{dc}}^2}= \) <span id="vac"></span> v</li>
-                                     </ul>
-                                  </div>
-                                  <div class=" col-md-6" id="Eq">
-                                     <ul class="eq">
-                                       <li class="eq"><strong> Ripple factor</strong> &nbsp; \(r=\frac{V_{ac}}{V_{dc}}= \) <span id="rf"> </span></li>
-                                       <li class="eq"><strong> Efficiency</strong> &nbsp; \(\eta=\frac{V_{dc}^2}{V_{rms}^2}*100= \) <span id="effe"> </span> %</li>
-                                     </ul>
-                                  </div>
-                              </div>
-                            </div>
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                     </div>
-
-                          </div>
-                      </div>
-                    </div>
-
-                </div>
               </div>
-
-
-              <div class="row Inst">
-                <div class="col-md-12" id="grp">
+              <div class="row ce Inst">
+                <div class="ce col-sm-8" id="ckt">
+                  <img class="img-fluid pic" src="images/PCa.png" alt="PCa"  id="PCa" />
+                  <img class="img-fluid pic" src="images/PCaWPVr.png" alt="PCaWPVr" id="PCaWPVr" />
+                  <img class="img-fluid pic" src="images/PCaWNVr.png" alt="PCaWNVr" id="PCaWNVr" />
+                  <img class="img-fluid pic" src="images/NCa.png" alt="NCa" id="NCa" />
+                  <img class="img-fluid pic" src="images/NCaWPVr.png" alt="NCaWPVr" id="NCaWPVr" />
+                  <img class="img-fluid pic" src="images/NCaWNVr.png" alt="NCaWNVr" id="NCaWNVr" />
+                </div>
+                <div class="ce col-sm-4" id="grp">
                     <div class="pic" id="grph"> </div>
                 </div>
-
-                </div>
               </div>
+
               <div class="row fc" id="ctl">
                 <div class="col-sm-3 ">
                   <div class="fc ce">
@@ -377,7 +442,7 @@
                           <h6>Function Generator Controls</h6>
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="row fc">
                       <div class="col-12 col-sm-6">
                           <input class="preset1" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
                           data-angleRange="280" id="av">
@@ -385,9 +450,26 @@
                           <h6>V<sub>i</sub> = <span id="vi"></span> V </h6>
                       </div>
                       <div class="col-12 col-sm-6">
-                        <input class="preset1 ce" type="range" min="50" max="60" step="10" data-width="80" data-height="80" data-angleOffset="-45" data-angleRange="90" id="fv">
+                        <input class="preset1 ce" type="range" min="0" max="10" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="fv">
                         <br>
-                          <h6>f = <span id="f"></span> Hz</h6>
+                          <h6>f = <span id="f"></span> kHz</h6>
+                      </div>
+                    </div>
+                    <div class="fc ce" id="v1">
+                      <div class="row">
+                        <div class="col-sm-12">
+                            <h6>Battery Voltage Control</h6>
+                        </div>
+                      </div>
+                      <div class="row ce">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <input class="preset1" type="range" min="0" max="5" data-width="80" data-height="80" data-angleOffset="220"
+                            data-angleRange="280" id="vrv">
+                            <br>
+                            <h6>V<sub>r</sub> = <span id="vr"></span> V </h6>
+                        </div>
+                        <div class="col-sm-3"></div>
                       </div>
                     </div>
                   </div>
@@ -430,7 +512,7 @@
 
                           </div>
                           <div class="col-12 col-sm-5">
-                            <input class="preset1" type="range" min="0.1" max="1" step="0.1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
                             <br>
                             <h6>Time = <span id="t1"></span> (ms)/div </h6>
                           </div>
@@ -480,7 +562,7 @@
 
                           </div>
                           <div class="col-12 col-sm-5">
-                            <input class="preset1" type="range" min="0.1" max="1" step="0.1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
+                            <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
                             <br>
                             <h6>Time = <span id="t2"></span> (ms)/div </h6>
                           </div>
@@ -523,24 +605,9 @@
                 <div class="col-sm-12">
                 </div>
               </div>
-
-        <div class="container ce">
-          <div class="row">
-            <div class="col-sm-12"> &nbsp; </div>
-          </div>
-        </div>
-
-
-
-        <div class="container ce">
-          <div class="row">
-            <div class="col-sm-12"> &nbsp; </div>
-          </div>
         </div>
 
       </div>
-      <!--- End of Simulation-->
-      <!--- Start of Post Quiz-->
       <div id="posq" class="container tab-pane fade"><br>
         <h3>Post-Quiz</h3>
         <div class="container ">
@@ -554,46 +621,57 @@
                 <div id="pqq" class="carousel slide">
                 <div class="carousel-inner">
                    <div class="carousel-item poq active">
-                     <p> \( V_{rms} \) for full wave rectifier is
+                     <p> Identify teh below clipping circuit.
+                       <center>
+                       <img class="img-fluid" src="./images/ClpDFSe.png" alt="Clipper circuit with forward biased diode in series ">
+                       </center><br>&nbsp;
                      </p>
                      <form method="post" id="pq1">
                        <p class="panq1" id="opq1c1">
-                       <input name="Aditya" value="q1" id="pq1c1" type="radio"> &nbsp;<label for="Aditya"> \( V_m \)</label></p>
+                       <input name="Aditya" value="q1" id="pq1c1" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with forward biased diode in series</label></p>
                        <p class="panq1" id="opq1c2">
-                       <input name="Aditya" value="q1" id="pq1c2" type="radio"> &nbsp;<label for="Aditya"> \( 2V_m \)</label></p>
+                       <input name="Aditya" value="q1" id="pq1c2" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with reverse biased diode in Shunt</label></p>
                        <p class="panq1" id="opq1c3">
-                       <input name="Aditya" value="q1" id="pq1c3" type="radio"> &nbsp;<label for="Aditya"> \( \frac{2V_m}{\sqrt{2}} \)</label></p>
+                       <input name="Aditya" value="q1" id="pq1c3" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with reverse biased diode in series</label></p>
                        <p class="panq1" id="opq1c4">
-                       <input name="Aditya" value="q1" id="pq1c4" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_m}{2} \)</label></p>
+                       <input name="Aditya" value="q1" id="pq1c4" type="radio"> &nbsp;<label for="Aditya"> Clipper circuit with forward biased diode in Shunt</label></p>
                      </form>
                      </div>
                    <div class="carousel-item poq">
-                     <p> Ripple factor (\( r \)) for full wave rectifier
+                     <p> Clipper circuit with forward biased diode in shunt shown below, if \(v_i < V_r \) the the state of Diode <b>D</b> is_______.
+                       <center>
+                       <img class="img-fluid" src="./images/ClpDFSh.png" alt="Clipper circuit with forward biased diode in shunt ">
+                       </center><br>&nbsp;
+                     </p>
                      </p>
                      <form method="post" id="pq2">
                        <p class="panq2" id="opq2c1">
-                       <input name="Aditya" value="q2" id="pq2c1" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_{ac}}{\sqrt{2}} \)</label></p>
+                       <input name="Aditya" value="q2" id="pq2c1" type="radio"> &nbsp;<label for="Aditya"> ON</label></p>
                        <p class="panq2" id="opq2c2">
-                       <input name="Aditya" value="q2" id="pq2c2" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_{ac}}{V_{dc}} \)</label></p>
+                       <input name="Aditya" value="q2" id="pq2c2" type="radio"> &nbsp;<label for="Aditya"> OFF </label></p>
                        <p class="panq2" id="opq2c3">
-                       <input name="Aditya" value="q2" id="pq2c3" type="radio"> &nbsp;<label for="Aditya"> \( \frac{V_{dc}}{2} \) </label></p>
+                       <input name="Aditya" value="q2" id="pq2c3" type="radio"> &nbsp;<label for="Aditya"> Toggle between ON and OFF </label></p>
                        <p class="panq2" id="opq2c4">
                        <input name="Aditya" value="q2" id="pq2c4" type="radio"> &nbsp;<label for="Aditya"> None of the above</label></p>
                      </form>
                    </div>
 
                    <div class="carousel-item poq">
-                     <p> Efficiency (\( \eta  \)%) of halfwave rectifier
+                     <p> Identify the input (\(v_i\)) and output (\(v_o\)) curve for given circuit below.
+                       <center>
+                       <img class="img-fluid" src="./images/ClpDt.png" alt="Clipper circuit with two diodes ">
+                       </center><br>&nbsp;
+                     </p>
                      </p>
                      <form method="post" id="pq3">
                        <p class="panq3" id="opq3c1">
-                       <input name="Aditya" value="q3" id="pq3c1" type="radio"> &nbsp;<label for="Aditya"> 81.2%</label></p>
+                       <input name="Aditya" value="q3" id="pq3c1" type="radio"> &nbsp;<label for="Aditya"> <img class="img-fluid" class="pqop" src="./images/c1vivo.png" alt="c1vivo "></label></p>
                        <p class="panq3" id="opq3c2">
-                       <input name="Aditya" value="q3" id="pq3c2" type="radio"> &nbsp;<label for="Aditya"> 40.6%</label></p>
+                       <input name="Aditya" value="q3" id="pq3c2" type="radio"> &nbsp;<label for="Aditya"><img class="img-fluid" class="pqop" src="./images/c2vivo.png" alt="c2vivo "></label></p>
                        <p class="panq3" id="opq3c3">
-                       <input name="Aditya" value="q3" id="pq3c3" type="radio"> &nbsp;<label for="Aditya"> 50%</label></p>
+                       <input name="Aditya" value="q3" id="pq3c3" type="radio"> &nbsp;<label for="Aditya"> <img class="img-fluid" class="pqop" src="./images/c3vivo.png" alt="c3vivo "></label></p>
                        <p class="panq3" id="opq3c4">
-                       <input name="Aditya" value="q3" id="pq3c4" type="radio"> &nbsp;<label for="Aditya"> None of the above</label></p>
+                       <input name="Aditya" value="q3" id="pq3c4" type="radio"> &nbsp;<label for="Aditya"> <img class="pqop" src="./images/c5vivo.png" alt="c5vivo "></label></p>
                      </form>
                    </div>
                  </div>
@@ -621,17 +699,10 @@
           </div>
         </div>
 
-      </div>
-      <!--- End of Post Quiz-->
 
-      <div id="fedbk" class="container tab-pane fade"><br>
-        <h3>Feedback</h3>
-        <br>&nbsp;
-          <center>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuDV3NFqMCjf0KNlCWhetT-nOuu7UZIF4tEg_bU19BSZVTIQ/viewform?embedded=true" width="600px" height="500px"></iframe>
-          </center>
 
-        <br>&nbsp;
+
+
       </div>
 
       <div id="refe" class="container tab-pane fade"><br>
@@ -646,6 +717,16 @@
         </ul>
       </div>
 
+      <div id="fedbk" class="container tab-pane fade"><br>
+        <h3>Feedback</h3>
+        <br>&nbsp;
+          <center>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuDV3NFqMCjf0KNlCWhetT-nOuu7UZIF4tEg_bU19BSZVTIQ/viewform?embedded=true" width="600px" height="500px"></iframe>
+          </center>
+
+        <br>&nbsp;
+      </div>
+
     </div>
   </div>
 
@@ -655,15 +736,14 @@
     <script type="text/javascript" src="./js/popper.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/plotly.js"></script>
-    <script type="text/javascript" src="./js/adi_Quiz.js"></script>
-    <script type="text/javascript" src="./js/adiFuWa.js"></script>
+    <script type="text/javascript" src="./js/clamp.js"></script>
     <script type="text/javascript" src="./js/knob.js"></script>
     <script type="text/javascript" src="./js/ui.js"></script>
     <script type="text/javascript" src="./js/ui.el.js"></script>
     <script type="text/javascript" src="./js/p1.js"></script>
     <script type="text/javascript" src="./js/adik.js"></script>
-
     <script type="text/javascript" src="./js/tex-chtml-full.js"> </script>
+    <script type="text/javascript" src="./js/adi_clpQuiz.js"></script>
           <svg>
               <filter id="dropshadow" height="150%" width="150%">
                   <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>

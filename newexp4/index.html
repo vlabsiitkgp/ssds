@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="./css/adi.css">
     <link rel="stylesheet" href="./css/adik.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-203333463-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-203333463-1');
+</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1L9YWERYY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -113,9 +122,7 @@
       <div id="obj" class="container tab-pane fade"><br>
         <h3>Objective</h3>
         <p style="text-align:justify">
-          To study the characteristics of halfwave rectifier with and without filter and to calculate the following parameters.<br>
-          A device, such as the semiconductor diode, which is
-          capable of converting a sinusoidal input waveform (whose average value is zero) into a unidirectional (though not constant) waveform, with a nonzero average component, is called a rectifier.
+          To study the characteristics of halfwave rectifier with and without filter and to calculate the following parameters.
           <ul>
             <li>Ripple factor</li>
             <li>Rectification efficiency</li>
@@ -127,7 +134,8 @@
       <div id="the" class="container tab-pane fade"><br>
         <h3>Theory</h3>
         <p style="text-align:justify">
-           The basic circuit for half-wave rectification is shown below.<br>&nbsp;
+          A device, such as the semiconductor diode, which is
+          capable of converting a sinusoidal input waveform (whose average value is zero) into a unidirectional (though not constant) waveform, with a nonzero average component, is called a rectifier. The basic circuit for half-wave rectification is shown below.<br>&nbsp;
           <center>
             <img src="./images/HaWa.png" alt="Halfwave circuit">
           </center><br>&nbsp;
@@ -136,7 +144,7 @@
           \( v_i = V_m sin(wt) \)
           </center><br>&nbsp;
           has a peak value V m which is very large compared with the cutin
-          voltage \( V_T \) of the diode, we assume
+          voltage \( V_T \) of the diode, we assume in the following discussion
           that \( V_\gamma = 0 \), (The condition \( V_I \neq 0 \) is treated. With the diode idealized to be a resistance \( R_f \) in the <b>ON</b> state and an open circuit in the <b>OFF</b> state, the current \( i \) in the diode or load \( R_L \) is given in<br>&nbsp;
           <center>
           \( i = I_m sin(α) \qquad \quad  if \quad 0 ≤ \alpha ≤ \pi \)<br>
@@ -158,7 +166,7 @@
             <center>
               <img src="./images/voplot.png" alt="Output plot">
             </center>.<br>&nbsp;
-            The input \( v_i \) and the rectified output \( v_o \) together in figure below <br>&nbsp;
+            The input \( v_i \) and the rectified output \( v_o \) togeter in figure below <br>&nbsp;
             <center>
               <img src="./images/vivoplot.png" alt="Input plot">
             </center><br>&nbsp;
@@ -326,7 +334,7 @@
 
                     <!-- The Modal -->
                     <div class="modal fade" id="parm">
-                      <div class="modal-dialog">
+                      <div class="modal-dialog modal-lg">
                           <div class="modal-content">
                                <div class="modal-header">
                            <h4 class="modal-title">Parameters</h4>
