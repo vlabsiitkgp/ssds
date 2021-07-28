@@ -269,7 +269,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: true,
+                          showticklabels: false,
                           autotick: true},
                           yaxis: {
                             title:'Output (V)',
@@ -288,7 +288,7 @@ Email: akraonandula@gmail.com
                       },
                       xaxis: {
                         title:'Time (s)',
-                        showticklabels: true,
+                        showticklabels: false,
                         autotick: true},
                         yaxis: {
                           title:'Vi/Vo (V)',
@@ -305,7 +305,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: true,
+                          showticklabels: false,
                           autotick: true},
                           yaxis: {
                             title:'Vi/Vo (V)',
@@ -322,7 +322,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: true,
+                          showticklabels: false,
                           autotick: true},
                           yaxis: {
                             title:'Vi/Vo (V)',
@@ -339,7 +339,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: true,
+                          showticklabels: false,
                           autotick: true},
                           yaxis: {
                             title:'Input(V)',
@@ -357,7 +357,7 @@ Email: akraonandula@gmail.com
                       },
                       xaxis: {
                         title:'Time (s)',
-                        showticklabels: true,
+                        showticklabels: false,
                         autotick: true},
                         yaxis: {
                           title:'Input(V)',
