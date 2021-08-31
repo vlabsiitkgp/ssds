@@ -24,16 +24,16 @@ Email: akraonandula@gmail.com
   var px2= $("#px2v").val();
   var py2= $("#py2v").val();
 
-  function rng(start,step,end) {
+  function rng(start,len,end) {
       var ans = [];
-      for (let i = start; i <= end; i=i+step) {
-          ans.push(i);
+      for (var i = start; i <= len; i++) {
+          ans.push(start+i/len*end);
       }
       return ans;
   };
   function rngvr(vr,vi) {
               var ans = [];
-              for(let i=0;vi[i]!=undefined;i++)
+              for(var i=0;vi[i]!=undefined;i++)
                   {
                         ans.push(vr);
                       }
@@ -41,7 +41,7 @@ Email: akraonandula@gmail.com
     };
   function rngscn(a,f,x) {
       var ans = [];
-        for(let i=0;x[i]!=undefined;i++)
+        for(var i=0;x[i]!=undefined;i++)
           {
             ans.push(a*Math.sin(f*x[i]));
           }
@@ -53,7 +53,7 @@ Email: akraonandula@gmail.com
           {alert("Select Vr should be lessthan A \n select Vr value properly");}
           else{
             if(sh==1){
-                  for(let i=0;vi[i]!=undefined;i++)
+                  for(var i=0;vi[i]!=undefined;i++)
                       {
                             if( vi[i]>vr )
                                 {ans.push(vi[i]);}
@@ -62,7 +62,7 @@ Email: akraonandula@gmail.com
                       }
                   }
                   else{
-                    for(let i=0;vi[i]!=undefined;i++)
+                    for(var i=0;vi[i]!=undefined;i++)
                         {
                               if( vi[i]<vr )
                                   {ans.push(vi[i]);}
@@ -82,7 +82,7 @@ Email: akraonandula@gmail.com
         else if(vr2<vr1)
         {alert("Vr1 should be lessthan Vr2 \n select Vr1 value properly");}
         else{
-        for(let i=0;vi[i]!=undefined;i++)
+        for(var i=0;vi[i]!=undefined;i++)
             {
                   if(vr1>vr2){
                     if( vi[i]<vr1 && vi[i]>vr2 )
@@ -108,7 +108,7 @@ Email: akraonandula@gmail.com
 
     function po(v,x) {
                 var ans = [];
-                for(let i=0;v[i]!=undefined;i++)
+                for(var i=0;v[i]!=undefined;i++)
                     {
                           ans.push(v[i]+Number(x));
                         }
@@ -128,11 +128,12 @@ Email: akraonandula@gmail.com
     var t2= $("#t2v").val();
     var px2= $("#px2v").val();
     var py2= $("#py2v").val();
+    var len=1000;
                 var amp1=amp/vc1;
                 var amp2=amp/vc2;
                 fre1=fre*t1;
                 fre2=fre*t2;
-                var ti= rng(0,0.01,2*Math.PI);
+                var ti= rng(0,len,2*Math.PI);
                 var vi= rngscn(amp1,fre1,ti,py1);
                 var vo= rngscn(amp2,fre2,ti);
                 var vclp1s= rngclp1(amp2,vr/vc2,vo,1);
@@ -141,8 +142,11 @@ Email: akraonandula@gmail.com
                 var vrl= rngvr(vr/vc2,vo);
                 var vr1l= rngvr(vr1/vc2,vo);
                 var vr2l= rngvr(vr2/vc2,vo);
-                var ti1= po(ti,px1);
-                var ti2= po(ti,px2);
+
+                var tim1= rng(0,len,fre1);
+                var tim2= rng(0,len,fre2);
+                var ti1= po(tim1,px1);
+                var ti2= po(tim2,px2);
                 vi= po(vi,py1);
                 vclp1s= po(vclp1s,py2);
                 vclp1h= po(vclp1h,py2);
@@ -217,7 +221,7 @@ Email: akraonandula@gmail.com
                       },
                       xaxis: {
                         title:'Time (s)',
-                        showticklabels: false,
+                        showticklabels: true,
                         autotick: true},
                         yaxis: {
                           title:'Input(V)',
@@ -235,7 +239,7 @@ Email: akraonandula@gmail.com
                       },
                       xaxis: {
                         title:'Time (s)',
-                        showticklabels: false,
+                        showticklabels: true,
                         autotick: true},
                         yaxis: {
                           title:'Output (V)',
@@ -252,7 +256,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: false,
+                          showticklabels: true,
                           autotick: true},
                           yaxis: {
                             title:'Output (V)',
@@ -269,7 +273,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: false,
+                          showticklabels: true,
                           autotick: true},
                           yaxis: {
                             title:'Output (V)',
@@ -288,7 +292,7 @@ Email: akraonandula@gmail.com
                       },
                       xaxis: {
                         title:'Time (s)',
-                        showticklabels: false,
+                        showticklabels: true,
                         autotick: true},
                         yaxis: {
                           title:'Vi/Vo (V)',
@@ -305,7 +309,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: false,
+                          showticklabels: true,
                           autotick: true},
                           yaxis: {
                             title:'Vi/Vo (V)',
@@ -322,7 +326,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: false,
+                          showticklabels: true,
                           autotick: true},
                           yaxis: {
                             title:'Vi/Vo (V)',
@@ -339,7 +343,7 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: false,
+                          showticklabels: true,
                           autotick: true},
                           yaxis: {
                             title:'Input(V)',
@@ -357,7 +361,7 @@ Email: akraonandula@gmail.com
                       },
                       xaxis: {
                         title:'Time (s)',
-                        showticklabels: false,
+                        showticklabels: true,
                         autotick: true},
                         yaxis: {
                           title:'Input(V)',

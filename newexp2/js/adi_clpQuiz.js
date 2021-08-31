@@ -110,13 +110,13 @@ $("#nb").click(function(){
 });
 
 
-$("#q1c4,#q2c1,#q3c1").click(function(){
+$("#q1c4,#q2c3,#q3c2").click(function(){
 //i=i+1;
 $(".an"+this.value).css("background","whitesmoke");
 $("#o"+this.id).css("background","#a1e890");
 //$("#qqsc").text("Score : "+i+" / "+(ql+1));
 });
-$("#q1c1,#q1c2,#q1c3,#q2c2,#q2c3,#q2c4,#q3c2").click(function(){
+$("#q1c1,#q1c2,#q1c3,#q2c1,#q2c2,#q2c4,#q3c1").click(function(){
 //i=i+1;
 $(".an"+this.value).css("background","whitesmoke");
 $("#o"+this.id).css("background","#dc8c8c");

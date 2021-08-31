@@ -9,31 +9,17 @@ Email: akraonandula@gmail.com
   var ckt=0;
   var ch=0;
   var cla=0;
-  var amp= $("#av").val();
-  var fre= $("#fv").val();
-  var vr= $("#vrv").val();
-  var vr1= $("#v1v").val();
-  var vr2= $("#v2v").val();
 
-  var vc1= $("#vc1v").val();
-  var t1= $("#t1v").val();
-  var px1= $("#px1v").val();
-  var py1= $("#py1v").val();
-  var vc2= $("#vc2v").val();
-  var t2= $("#t2v").val();
-  var px2= $("#px2v").val();
-  var py2= $("#py2v").val();
-
-  function rng(start,step,end) {
+  function rng(start,len,end) {
       var ans = [];
-      for (let i = start; i <= end; i=i+step) {
-          ans.push(i);
+      for (var i = start; i <= len; i++) {
+          ans.push(start+i/len*end);
       }
       return ans;
   };
   function rngvr(vr,vi) {
               var ans = [];
-              for(let i=0;vi[i]!=undefined;i++)
+              for(var i=0;vi[i]!=undefined;i++)
                   {
                         ans.push(vr);
                       }
@@ -41,7 +27,7 @@ Email: akraonandula@gmail.com
     };
   function rngscn(a,f,x) {
       var ans = [];
-        for(let i=0;x[i]!=undefined;i++)
+        for(var i=0;x[i]!=undefined;i++)
           {
             ans.push(a*Math.sin(f*x[i]));
           }
@@ -49,7 +35,7 @@ Email: akraonandula@gmail.com
   };
     function po(v,x) {
                 var ans = [];
-                for(let i=0;v[i]!=undefined;i++)
+                for(var i=0;v[i]!=undefined;i++)
                     {
                           ans.push(v[i]+Number(x));
                         }
@@ -67,23 +53,30 @@ Email: akraonandula@gmail.com
     var t2= $("#t2v").val();
     var px2= $("#px2v").val();
     var py2= $("#py2v").val();
+    var len=1000;
                 var amp1=amp/vc1;
                 var amp2=amp/vc2;
                 fre1=fre*t1;
                 fre2=fre*t2;
-                var ti= rng(0,0.01,2*Math.PI);
+                var ti= rng(0,len,2*Math.PI);
                 var vi= rngscn(amp1,fre1,ti);
                 var vo= rngscn(amp2,fre2,ti);
                 var vrl= rngvr(vr/vc2,vo);
+                var tim1= rng(0,len,fre1);
+                var tim2= rng(0,len,fre2);
+                var ti1= po(tim1,px1);
+                var ti2= po(tim2,px2);
 
                 if(cla==1)
                 {
                     vo= po(vo,amp2);
                     vrl= rngvr(0*vr/vc2,vi);
+                    datao=[vo];
                 }
                 else if (cla==4) {
                   vo= po(vo,-amp2);
                   vrl= rngvr(0*vr/vc2,vi);
+                  datao=[vo];
                 }
                 else if (cla==2) {
                   vo= po(vo,(Number(amp)+Number(vr))/vc2);
@@ -101,10 +94,7 @@ Email: akraonandula@gmail.com
                   vo= po(vo,(-Number(amp)-Number(vr))/vc2);
                   vrl= rngvr(-vr/vc2,vi);
                 }
-                var tim1= rng(0,1/(ti.length),t1);
-                var tim2= rng(0,1/(ti.length),t2);
-                var ti1= po(tim1,px1);
-                var ti2= po(tim2,px2);
+
                 vi= po(vi,py1);
                 vo= po(vo,py2);
                 vrl= po(vrl,py2);
@@ -151,7 +141,13 @@ Email: akraonandula@gmail.com
                           autotick: true}};
                     }
                     else if(cha=='2'){
-                      var data = [op,inr];
+                      if(cla==1 || cla==4)
+                      {
+                          var data=[op];
+                      }
+                      else {
+                        var data=[op,inr];
+                      }
                       var layout={title: 'Clamper Circuit Output(Vo)', plot_bgcolor: 'black',paper_bgcolor:'black',
                       font: {
                         family: 'Courier New, monospace',
@@ -168,7 +164,13 @@ Email: akraonandula@gmail.com
                           autotick: true}};
                       }
                     else if(cha=='3'){
-                      var data = [in1,op,inr];
+                      if(cla==1 || cla==4)
+                      {
+                          var data = [in1,op];
+                      }
+                      else {
+                        var data = [in1,op,inr];
+                      }
                       var layout={title: 'Clamper Circuit Plot',plot_bgcolor: 'black',paper_bgcolor:'black',text_color:'blue',
                       font: {
                         family: 'Courier New, monospace',
@@ -194,11 +196,11 @@ Email: akraonandula@gmail.com
                         },
                         xaxis: {
                           title:'Time (s)',
-                          showticklabels: true,
+                          showticklabels: false,
                           autotick: true},
                           yaxis: {
                             title:'Input(V)',
-                            showticklabels: true,
+                            showticklabels: false,
                             autotick: true}};
                       }
                     Plotly.newPlot(gr, data,layout);

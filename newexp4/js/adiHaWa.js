@@ -20,10 +20,10 @@ Email: akraonandula@gmail.com
   var px2= $("#px2v").val();
   var py2= $("#py2v").val();
 
-  function rng(start,step,end) {
+  function rng(start,len,end) {
       var ans = [];
-      for (let i = start; i <= end; i=i+step) {
-          ans.push(i);
+      for (var i = start; i <= len; i++) {
+          ans.push(start+i/len*end);
       }
       return ans;
   };
@@ -86,16 +86,19 @@ Email: akraonandula@gmail.com
     var t2= $("#t2v").val();
     var px2= $("#px2v").val();
     var py2= $("#py2v").val();
+    var len=1000;
               parame(amp);
                 var amp1=amp/vc1;
                 var amp2=amp/vc2;
                 fre1=fre*t1;
                 fre2=fre*t2;
-                var ti= rng(0,0.01,6);
+                var ti= rng(0,len,2*Math.PI);
                 var vi= rngscn(amp1,fre1,ti);
                 var vo= rngscn(amp2,fre2,ti);
-                var ti1= po(ti,px1);
-                var ti2= po(ti,px2);
+                var tim1= rng(0,len,fre1);
+                var tim2= rng(0,len,fre2);
+                var ti1= po(tim1,px1);
+                var ti2= po(tim2,px2);
                 vi= po(vi,py1);
                 var haw= hawa(amp2,vo);
                 haw= po(haw,py2);
